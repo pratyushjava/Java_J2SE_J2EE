@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>bank_jsp</display-name>
+	<welcome-file-list>
+		<welcome-file>bank_login.html</welcome-file>
+
+	</welcome-file-list>
+	<!-- In case of any exc WC auto forwards user to err handling page -->
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/err_handler.jsp</location>
+	</error-page>
+	<session-config>
+	<!-- tmout in mins -->
+	<session-timeout>10</session-timeout>
+	</session-config>
+</web-app>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts SYSTEM "struts2.dtd">
+<struts>
+	<package name="emp" namespace="/emp" extends="struts-default">
+	<!-- pass-thro action for changing to this pkg -->
+		<action name="test_emp">
+			<result>welcome_emp.jsp</result>
+		</action>
+	
+		<action name="add_emp" class="emp_actions.EmpAction" method="add">
+			<result type="redirectAction">list_emp</result>
+		</action>
+		<action name="list_emp" class="emp_actions.EmpAction" method="list">
+			<result>emp_dtls.jsp</result>
+		</action>
+	</package>
+</struts>

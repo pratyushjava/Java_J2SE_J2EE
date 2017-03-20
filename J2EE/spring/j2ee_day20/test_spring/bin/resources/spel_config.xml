@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="item1" class="spel.model.Item" >
+		<property name="name" value="abc1" />
+		<property name="quantity" value="10" />
+	</bean>
+	<bean id="item2" class="spel.model.Item">
+		<property name="name" value="abc2" />
+		<property name="quantity" value="10" />
+	</bean>
+
+	<bean id="cust1" class="spel.model.Customer">
+		<!-- Already known to be working 
+		<property name="item" ref="item2" /> 
+		-->
+		<!-- Alternative via SPEL -->
+		<property name="item" value="#{item2}" />
+		<!-- Only possible with SPEL -->
+		<property name="name" value="#{item2.name}" />
+	</bean>
+
+</beans>

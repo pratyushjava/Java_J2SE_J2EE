@@ -1,0 +1,65 @@
+package shpcart;
+import java.util.*;
+public class TestCustomer {
+	
+	static HashMap<Integer,Customer> hm=null;
+	public static void main(String[] args) {
+
+		Book[] b1={new Book("java","madhura","cdac",500,3),new Book(".net","delhi mam","fast",850,3), new Book("web","sole","hyderabad",3000,3)};
+		
+		/*Customer[]	c1={new Customer(101,"nani"),new Customer(102,"prat"), new Customer(35,"raj")};
+		for(Customer c: c1)
+		{
+			hm.put(c.getId(),c);
+		}*/
+		Scanner sc=new Scanner(System.in);
+		
+		boolean flag=false;
+		while(!flag)
+		{
+			
+		
+		System.out.println("enter the choice");
+		System.out.println("press 1 for signup \n press 2 for display all customer details");
+		System.out.println("press 3 for sort customers as per id and display \n press 4 to delete account");
+		System.out.println("press 5 for login \n press 6 to exit");
+		int ch=sc.nextInt();
+		switch(ch)
+		{
+		case 1:
+				
+					System.out.println("enter your id and name ");
+					int idc=sc.nextInt();
+					String nam=sc.next();
+					if(checkCustomer(idc,nam))
+					{
+						System.out.println("login successfull");
+					}
+					else
+					{
+						System.out.println("login unsucessfull please try again with correct id and name");
+					}
+					break;
+						
+					
+					
+					
+					
+			
+		
+		
+		}
+		
+		
+	}
+	public static boolean checkCustomer(int idc, String nam) 
+	{
+		if(hm.containsKey(idc))
+		{
+			return hm.get(idc).getName().equalsIgnoreCase(nam);
+		}
+		return false;
+	}
+	
+
+}

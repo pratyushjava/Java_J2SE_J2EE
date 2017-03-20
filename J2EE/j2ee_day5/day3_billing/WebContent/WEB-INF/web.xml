@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5"> -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>day3_billing</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>display all reg cell nos</description>
+		<display-name>DisplayCellNosServlet</display-name>
+		<servlet-name>DisplayCellNosServlet</servlet-name>
+		<servlet-class>pages.DisplayCellNosServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayCellNosServlet</servlet-name>
+		<url-pattern>/display_cells</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>DisplayDetailsMainServlet</display-name>
+		<servlet-name>DisplayDetailsMainServlet</servlet-name>
+		<servlet-class>pages.DisplayDetailsMainServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayDetailsMainServlet</servlet-name>
+		<url-pattern>/display_info</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>LogoutHandlerServlet</display-name>
+		<servlet-name>LogoutHandlerServlet</servlet-name>
+		<servlet-class>pages.LogoutHandlerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutHandlerServlet</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>updates bill dtls</description>
+		<display-name>UpdateInfoServlet</display-name>
+		<servlet-name>UpdateInfoServlet</servlet-name>
+		<servlet-class>pages.UpdateInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateInfoServlet</servlet-name>
+		<url-pattern>/update_info</url-pattern>
+	</servlet-mapping>
+
+</web-app>

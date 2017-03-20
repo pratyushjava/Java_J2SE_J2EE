@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts2.3.dtd">
+
+<struts>
+	<package name="hiber" namespace="/" extends="struts-default">
+		<!-- pass thro action to display login form n change namespace -->
+		
+		<result-types>
+		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+		
+		<action name="show" class="Actions.FillList">
+		<result type="tiles">newhome</result>
+		<result type="tiles" name="error">newhome</result>
+		
+		</action>
+	
+	<action name="Latest" >
+		<result type="tiles">Latest</result>
+		
+		
+		</action>
+	
+	<action name="aboutus" >
+		<result type="tiles">aboutus</result>
+		
+		
+		</action>
+		
+		<action name="TA" >
+		<result type="tiles">TA</result>
+		
+		
+		</action>
+	
+	<action name="PP" >
+		<result type="tiles">PP</result>
+		
+		
+		</action>
+	
+	<action name="FB" >
+		<result type="tiles">FB</result>
+		
+		
+		</action>
+	
+	
+	
+	<action name="Destination" >
+		<result type="tiles">Destination</result>
+		
+		
+		</action>
+	
+	
+		<action name="RootMap" class="">
+		<result type="tiles">rootmap</result>
+		
+		
+		</action>
+		
+		<action name="career" class="">
+		<result type="tiles">career</result>
+		<result type="tiles" name="error">newhome</result>
+		
+		</action>
+		
+		<action name="home" class="Actions.FlightShow">
+		<result type="tiles">ShowFlight</result>
+		<result type="tiles" name="error">noflight</result>
+		
+		</action>
+		
+		
+		<action name="addwithus" >
+		<result type="tiles">addwithus</result>
+		
+		
+		</action>
+		
+		<action name="tnc1" >
+		<result type="tiles">tnc1</result>
+		
+		
+		</action>
+		
+		
+		<action name="PassangerDetails">
+		<result type="tiles">PassangerDetails</result>
+		<result type="tiles" name="error">PassangerDetails</result>
+		
+		</action>
+		
+		<action name="tips">
+		<result type="tiles">tips</result>
+		
+		
+		</action>
+		
+		
+		
+		<action name="payment" class="Actions.Payment">
+		<result type="tiles">payment</result>
+		<!-- <result type="tiles" name="error">PassangerDetails</result> -->
+		
+		</action>
+		
+		<action name="paymentdetails" >
+		<result type="tiles">BankingDetails</result>
+		</action>
+		
+		<action name="PaymentComplete" class="Actions.PaymentComplete">
+		<result type="tiles">ShowTicket</result>
+		</action>
+		
+		<action name="Hotelpaymentdetails" >
+		<result type="tiles">HotelBankingDetails</result>
+		</action>
+		
+		<action name="Status" >
+		<result type="tiles">Status</result>
+		</action>
+		
+		<action name="GetStatus" class="Actions.GetStatus">
+		<result type="tiles">Status</result>
+		</action>
+		
+		
+		<action name="HotelPaymentComplete" class="Actions.HotelPaymentComplete">
+		<result type="tiles">BankingSlip</result>
+		</action>
+		
+		
+		<action name="Userpaymentdetails" class="Actions.UserPaymentComplete">
+		<result type="tiles">Userpayment</result>
+		</action>
+		
+		
+		<action name="FlightBook">
+		<result type="tiles">FlightBook</result>
+		</action>
+		
+		<action name="NewFlightBook">
+		<result type="tiles">NewFlightBook</result>
+		</action>
+		
+		
+		<action name="ContactUs">
+		<result type="tiles">ContactUs</result>
+		
+		</action>
+		
+		
+		<action name="Hotel" class="Actions.FillList">
+		<result type="tiles">Hotel</result>
+		
+		</action>
+		
+		<action name="HotelSearch" class="Actions.FillList">
+		<result type="tiles">HotelSearch</result>
+		
+		
+		</action>
+		
+		<action name="LeftHotel" class="Actions.FillList">
+		<result type="tiles">LeftHotel</result>
+		
+		</action>
+		
+		<action name="PassangerLogin">
+		<result type="tiles">PassangerLogin</result>
+		
+		</action>
+		
+		<action name="PassangerHome" class="Actions.PassangerValidate" >
+		<result type="tiles">PassangerHome</result>
+		<result name="error">/tilespages/error.jsp</result>
+		<result name="input" type="tiles">PassangerLogin</result>
+		
+		</action>
+		
+		<action name="HotelDetails" class="Actions.HotelDetails">
+		<result type="tiles">HotelDetails</result>
+		<result type="tiles" name="error">nohotel</result>
+		
+		</action>
+		
+		<action name="PrintTicket" >
+		<result type="tiles">PrintTicket</result>
+		
+		</action>
+		
+		<action name="HotelUserDetails" >
+		<result type="tiles">HotelUserDetails</result>
+		
+		</action>
+		
+		<action name="Hotelpayment" class="Actions.HotelPayment">
+		<result type="tiles">Hotelpayment</result>
+		
+		</action>
+		
+		
+		<action name="ShowTicket" class="Actions.PrintTicketInfo">
+		<result type="tiles">ShowTicket</result>
+		<result name="error">ShowTicket</result>
+		
+		</action>
+		
+		<action name="UserFlightSearch" >
+		<result type="tiles">UserFlightSearch</result>
+		
+		</action>
+		
+		<action name="UserPassangerDetails" >
+		<result type="tiles">UserPassangerDetails</result>
+		
+		</action>
+		
+		
+		<action name="UserFlightDetails" class="Actions.FlightShow" >
+		<result type="tiles">UserFlightDetails</result>
+		
+		</action>
+		
+		
+		<action name="Userpayment" class="Actions.UserPayment">
+		<result type="tiles">Userpayment</result>
+		<result type="tiles" name="error">UserPassangerDetails</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="hello">
+		<result>/hiber/abc.jsp</result>
+		</action>
+<!-- 
+		<action name="show_form">
+			<result>login.jsp</result>
+		</action>
+		<action name="login" class="actions.LoginAction">
+			<result>login_succ.jsp</result>
+			<result name="error">login_err.jsp</result>
+		</action> -->
+	</package>
+	
+<include file="admin_xml.xml"></include>
+</struts>

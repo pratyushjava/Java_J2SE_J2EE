@@ -1,0 +1,8 @@
+package custexception;
+
+public class AgeExcep {
+	public AgeExcep(String msg) {
+		super(msg);
+		
+	}
+}

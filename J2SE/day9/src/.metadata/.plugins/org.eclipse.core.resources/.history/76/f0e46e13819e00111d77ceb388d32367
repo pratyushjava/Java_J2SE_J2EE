@@ -1,0 +1,25 @@
+package shpcart;
+
+import java.awt.*;
+import javax.swing.*;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+public class Jframeshpcart extends JFrame {
+
+	JPanel p1;
+	public Jframeshpcart(String title)
+	{
+		super(title);
+		 setSize(400,200);
+		 setLocationRelativeTo(null);
+		 getContentPane().setBackground(Color.CYAN);
+		 
+	}
+	
+	public static void main(String[] args) {
+new Jframeshpcart("BOOK-SHOP");
+
+	}
+
+}

@@ -1,0 +1,22 @@
+package Payroll;
+
+public class SalariedEmployee extends Employee {
+	double basic;
+	double hra;
+	double da;
+	double netsal
+	public SalariedEmployee(int id, String name, String addr, int deptid,
+			double basic, double hra, double da) {
+		super(id, name, addr, deptid);
+		this.basic = basic;
+		this.hra = hra;
+		this.da = da;
+	}
+	
+	public double netsalary()
+	{
+		netsal=basic + hra + da *(0.20);
+		return netsal;
+	}
+	
+}

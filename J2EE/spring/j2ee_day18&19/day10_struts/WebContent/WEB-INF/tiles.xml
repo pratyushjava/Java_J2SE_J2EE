@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="struts2tiles.mainLayout" template="/templates/mainlayout.jsp">
+      <put-attribute name="header" value="/common/header.jsp"/>
+      <put-attribute name="body"   value=""/>
+      <put-attribute name="footer"   value="/common/footer.jsp"/>
+  </definition>
+  
+  <definition name="struts2tiles.home" extends="struts2tiles.mainLayout">
+      <put-attribute name="body"   value="/tiles_pages/home.jsp"/>      
+  </definition>
+  
+  <definition name="struts2tiles.page1" extends="struts2tiles.mainLayout">
+      <put-attribute name="body"   value="/tiles_pages/page1.jsp"/>      
+  </definition>
+  
+  <definition name="struts2tiles.page2" extends="struts2tiles.mainLayout">
+      <put-attribute name="body"   value="/tiles_pages/page2.jsp"/>      
+  </definition>
+  
+</tiles-definitions>

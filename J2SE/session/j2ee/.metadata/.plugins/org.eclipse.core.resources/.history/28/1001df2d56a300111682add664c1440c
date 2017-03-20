@@ -1,0 +1,7 @@
+package firstjdbc;
+import java.sql.*;
+public class Createconnection {
+Createconnection(){
+	
+}
+}

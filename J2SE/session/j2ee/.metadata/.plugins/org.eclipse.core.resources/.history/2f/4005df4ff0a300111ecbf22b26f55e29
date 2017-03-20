@@ -1,0 +1,39 @@
+package firstjdbc;
+import java.sql.*;
+
+public class ServiceImpl implements Service {
+
+	CreateConnection c=new CreateConnection();
+	Connection con;
+	@Override
+	public boolean insrt(Account a) {
+		con=
+	
+	return true;	
+	}
+
+	@Override
+	public void delete(int accno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Account a) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrive(int accno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void retrivAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

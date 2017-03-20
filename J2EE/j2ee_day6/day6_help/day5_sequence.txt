@@ -1,0 +1,18 @@
+For JSP basics
+
+1. Create login form(login.html) -- accepting email & password -- submit the same to login.jsp.
+Perform HashMap based authentication(i.e replace DB table by HashMap) --- upon successful validation --- display user dtls from the same page , o.w give Retry link to take user to login form.
+
+2. Above flow remains the same for error branch. For success branch -- add user dtls to session scope, give Next link to dtls page(details.jsp) & display User dtls from dtls page.
+
+3. Above flow remains the same for error branch. For success branch -- add user dtls to session scope, use send re-direct to navigate user to dtls page(details.jsp) & display User dtls from dtls page.
+
+4.Above flow remains the same for error branch. For success branch -- add user dtls to appropriate scope, use RD's forward scenarion to navigate user to dtls page(details.jsp) & display User dtls from dtls page.
+
+5. From above --- replace forward scenario by include' scenario & test the same.(Identify diff between include & forward)
+
+
+6. Understand page directive, error handling attributes, include directive --- write complete example --- User chooses a browser, suppose server is supporting only FireFox Mozilla, if user selects this then --- show correct selection msg via include directive . Or for incorrect selection --- use JSP's error page to display error mesg.
+
+7. Then enter JavaBeans.......
+

@@ -1,0 +1,98 @@
+Why Layers ?
+1. J2EE patterns are implemented using different layers. So layers enable clear-cut separation of logic. eg --- DAO layer = Data Access nobject --- must contain ONLY data access/manipulation logic.
+
+2. Allows code re-usablility. Same layers can be re-used across multiple pages(JSP/Servlets) or even across multiple web-applications.
+3. Debugging , maintainance and migration to diff. frameworks  becomes easier.
+
+
+ 
+In Bottoms-up dev
+1. DB tier --- identify DB requirement(design) & create DB tables/populate the same.
+2. POJO layer --- Plain Old Java Object
+POJO class - Rules --- public , packaged class, must have def constr, optionally -- imple. Serializable i/f,optinally -- can supply parameterized constr, must have private --non -static , non-transient data members(state of obj), per data member -- supply --- setter & getter. + optionally can use toString
+
+Mapping between POJO & DB table
+DB table --- POJO class (must be serializable for Hibernate)
+Table cols --- POJO properties(state-- non-static , non - transient data members)
+Table rows --- POJO class inst
+Primary key --- Unique ID property(mandatory in Hibernate)
+
+DAO layer --- BillDAO
+Purpose --- entire data access logic
+1. default constr --- 
+load jdbc drvr,get cn & prepare PSTs
+sql1 --- select mob_no from billing
+sql2 ---- select * from billing where mob_no=?
+sql3 -- update billing set call_duration=? bill_amt=? where mob_no=?
+2. shut down --- close PSTs, close cn
+
+
+3. Data access methods(CRUD) --- 
+eg ---
+1. Get all cell nos 
+    ArrayList<String> getAllCellNos()
+2.  Get specified cell no record
+  BillPOJO getBillDetails(String cellNO)
+3.  String updateBillDetails(BillPOJO b)
+I/P  -- BillPOJO --- with updated call-duration & bill amt
+Logic --- 
+pst3.setInt(1,b.getCallDuration());
+pst3.setDouble(2,b.getBillAmt());
+pst3.setString(3,b.getMobNo());
+int updateCnt=pst3.executeUpdate();
+if (updateCnt == 1)
+ return "success"
+return "failed..."
+
+Layer --- servlets
+1. S1--- to display all registered cell nos in select list.
+doGet----
+create session
+create  DAO inst 
+add DAO inst to session --- for sharing SAME DAO inst across mult web pages
+
+
+HTML eg 
+<form action="display_info">
+<select name="cell_no">
+<option value="12345">12345
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+

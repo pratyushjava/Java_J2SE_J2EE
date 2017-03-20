@@ -1,0 +1,15 @@
+package firstjdbc;
+
+import javax.swing.JFrame;
+
+public class ActionForm extends JFrame {
+	
+	String str[];
+	public static void main(String[] args) {
+		new ActionForm();
+	}
+	ActionForm(){
+		
+	}
+
+}

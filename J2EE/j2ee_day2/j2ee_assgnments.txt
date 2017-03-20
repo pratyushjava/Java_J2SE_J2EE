@@ -1,0 +1,26 @@
+Day 1
+1. Create login/signup swing frame based application using JDBC APA(PreparedStaement only)
+
+Day 2
+1. MUST ensure correct working of tomcat apache web server ---outside IDE & also from the IDE(refer to steps in readme_web_server)
+
+2.Create Accounts table in the DB(either using MySql clnt interface or JDBC API.  or using Oracle DB 
+
+Columns : acid : primary key, name, type , balance). Create Java Application for the following.
+
+
+a.	Option 1 : Insert account . Accept a/c details from the user & insert the row in the DB table. O/P : Insertion Successful message or failure mesg.(min opening bal=500)
+b.	Option 2. : Display all accounts.
+c.	Option 3  : Display sorted accounts as per the a/c balance.
+d.	Option 4. : Withdraw Funds
+I/p : acid , withdrawl amt.
+o/p : updated account details. Or failure mesg.(A/c should not be overdrawn : min bal = 500)
+e.	Option 5 : Deposit Funds(same as option 4)
+f.	Option 6 : Remove A/c
+I/P : A/c Id .
+g.	Option 7 : exit
+
+Supply all of above options with by GUI Jframe.--- RMI clnt
+& supply JDBC functionality from rem obj .(RMI+JDBC)
+(RMI & JDBC integration can be tried as 2nd step. First test everything in standalone JDBC appln)
+

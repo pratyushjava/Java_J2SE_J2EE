@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Printer beans -->
+	<bean id="cPrinter" class="why_spring.beans.UpdateInfoConsolePrinter"
+		scope="singleton" />
+	<bean id="fPrinter" class="why_spring.beans.UpdateInfoFilePrinter" />
+	<bean id="dbPrinter" class="why_spring.beans.UpdateInfoDBPrinter" />
+
+	<!-- Student beans -->
+	<bean id="stud1" class="why_spring.beans.SpringStudent">
+		<property name="printer" ref="cPrinter" />
+	</bean>
+	<bean id="stud2" class="why_spring.beans.SpringStudent">
+		<property name="printer" ref="dbPrinter" />
+	</bean>
+	<bean id="stud3" class="why_spring.beans.SpringStudent">
+		<property name="printer" ref="fPrinter" />
+	</bean>
+	<!-- setter based DI -->
+	<bean id="stud4" class="why_spring.beans.SpringStudent">
+		<property name="printer" ref="cPrinter" />
+		<property name="id" value="1" />
+		<property name="firstName" value="aa" />
+		<property name="lastName" value="bb" />
+	</bean>
+	
+</beans>

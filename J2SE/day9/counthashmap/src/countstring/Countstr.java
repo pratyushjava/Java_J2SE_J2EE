@@ -1,0 +1,37 @@
+package countstring;
+
+import java.util.*;
+
+public class Countstr {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		System.out.println("enter the string");
+		Scanner sc=new Scanner(System.in);
+		String str=null;
+		int i;
+		HashMap<String,Integer> hm=new HashMap<>();
+		while(!(str=sc.next()).equals("exit"))
+		{
+			if(hm.containsKey(str))
+			{
+				i=hm.get(str);
+				hm.put(str,++i);
+				
+				
+			}
+			else
+			{
+				hm.put(str,1);
+			}
+				
+		}
+		System.out.println("hm"+hm);
+		
+	
+
+}
+}

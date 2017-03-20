@@ -1,0 +1,145 @@
+package My_socket_thread;
+import java.net.*;
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.*;
+import java.net.ServerSocket;
+
+
+public class MyclientSocket extends JFrame implements ActionListener{
+	
+	public static final int SERVER_PORT=3000;
+	public JTextField jt;
+	public JTextArea jta;
+	public JPanel p;
+	public JScrollPane jsp;
+	public boolean exit=false;
+	public DataOutputStream pw;
+	public DataInputStream in;
+	Socket s=null;
+	
+	
+	public static void main(String[] args)throws Exception {
+		
+			new MyclientSocket();
+	}
+	
+	public MyclientSocket() 
+	{
+		super("client");
+		initGui();
+	    setup();
+	    appendData();
+	}
+	
+	void setup()
+	{
+    try{
+	
+    	s=new Socket("localhost",SERVER_PORT);
+		pw =new DataOutputStream(s.getOutputStream());
+		in=new DataInputStream(s.getInputStream());
+		System.out.println("data strms attached");
+   }catch (Exception e) {
+e.printStackTrace();
+	   
+}
+
+		
+	}
+	
+	
+	
+				
+		
+	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	    
+			try{
+				 pw.writeUTF(jt.getText());
+		    	 pw.flush();
+		    	 jt.setText("");
+	    	   	 System.out.println("waiting for client response");
+	        	
+			}
+			catch (Exception ex) {
+					ex.printStackTrace();
+			}
+	}
+
+public void initGui()
+{
+	  JPanel p1=new JPanel();
+	  p=new JPanel(new GridLayout(3, 2,10,10));
+	  p.add(new JLabel("Send Text"));
+	  jt=new JTextField();
+	  jt.addActionListener(this);
+	  p.add(jt);
+	  jta=new JTextArea(5,10);
+	  p.add(new JLabel("Receive Text"));
+	  p.add(jsp=new JScrollPane(jta=new JTextArea()));
+	  p.add(p1);
+	  add(p);
+     setSize(400, 400);
+     setVisible(true);
+    
+
+
+     addWindowListener(new WindowAdapter() {
+
+     @Override
+    public void windowClosing(WindowEvent e) {
+    
+     if(s!=null)
+		try {
+			if(s!=null)
+			s.close();
+			pw.close();
+			
+		} catch (IOException e1) {
+			
+			e1.printStackTrace();
+		}
+     
+     
+     
+     }
+     
+     });
+
+
+
+
+
+
+
+}
+
+
+
+void appendData()
+{
+
+	String s=null;
+		try {
+			while((s=in.readUTF())!=null)
+			{
+			jta.append(s+"\n");	
+			}
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}		
+
+}
+
+}

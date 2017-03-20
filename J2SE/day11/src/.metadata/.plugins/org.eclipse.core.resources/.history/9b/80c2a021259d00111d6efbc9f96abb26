@@ -1,0 +1,10 @@
+package Pbank;
+import java.util.*;
+public class Account {
+	private id;
+	private name;
+	private type;
+	private int balance;
+	private Calendar doc;
+
+}

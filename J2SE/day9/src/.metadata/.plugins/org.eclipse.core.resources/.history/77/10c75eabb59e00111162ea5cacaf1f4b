@@ -1,0 +1,24 @@
+package shpcart;
+import java.awt.Color;
+
+import javax.swing.*;
+public class DeleteAccount extends JFrame{
+
+	JButton b1,b2;
+	JLabel l1,l2;
+	JPanel p1,p2;
+	JTextField t1,t2;
+	
+		public DeleteAccount (String s)
+		{
+			setSize(300, 300);
+			setLocationRelativeTo(null);
+			getContentPane().setBackground(Color.CYAN);
+			
+		}
+	public static void main(String[] args) {
+			
+		new DeleteAccount("FOR UNREGISTERING THE ACCOUNT");
+	}
+
+}

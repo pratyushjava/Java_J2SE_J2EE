@@ -1,0 +1,51 @@
+package Bounce;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BounceFrame extends JFrame implements ActionListener {
+	
+	JButton b1,b2;
+	JPanel p1;
+	public BounceFrame() {
+		super("my bouncing frame");
+		setLocationRelativeTo(null);
+		setSize(300,300);
+		getContentPane().setBackground(Color.CYAN);
+		b1=new JButton("Start");
+		b2=new JButton("top");
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		p1=new JPanel(new GridLayout(1,2,20,20));
+		p1.add(b1);
+		p1.add(b2);
+		add(p1,BorderLayout.SOUTH);
+		Mypanel p2=new Mypanel();
+		add(p2);
+		
+		
+		
+	
+	}
+	
+	public class Mypanel extends JPanel{
+		public Mypanel(){
+			setBackground(Color.blue);
+		}
+		public void	paintComponent(Graphics g){
+			super.paintComponent(g);
+				
+			}
+			
+		}
+	}
+	
+
+}

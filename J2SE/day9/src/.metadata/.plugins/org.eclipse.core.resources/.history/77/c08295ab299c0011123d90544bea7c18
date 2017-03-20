@@ -1,0 +1,11 @@
+package shpcart;
+
+public class Book {
+	
+	private String name;
+	private String author;
+	private String desc;
+	private double price;
+	private double quantity;
+
+}

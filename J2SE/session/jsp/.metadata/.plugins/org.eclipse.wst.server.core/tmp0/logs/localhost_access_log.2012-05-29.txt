@@ -1,0 +1,14 @@
+127.0.0.1 - - [29/May/2012:00:24:02 +0530] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:24:15 +0530] "GET /day6/basic/login.jsp?email=a@b&pass=123 HTTP/1.1" 200 386
+127.0.0.1 - - [29/May/2012:00:50:52 +0530] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:50:55 +0530] "GET /day6/basic/browsers.html HTTP/1.1" 200 519
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:50:55 +0530] "GET /favicon.ico HTTP/1.1" 404 988
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:51:04 +0530] "GET /day6/basic/choose.jsp?browser=FireFox HTTP/1.1" 200 327
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:51:04 +0530] "GET /favicon.ico HTTP/1.1" 404 988
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:51:14 +0530] "GET /day6/basic/choose.jsp?browser=IE HTTP/1.1" 500 511
+0:0:0:0:0:0:0:1 - - [29/May/2012:00:51:21 +0530] "GET /day6/basic/choose.jsp?browser=Chrome HTTP/1.1" 500 519
+0:0:0:0:0:0:0:1 - - [29/May/2012:01:07:32 +0530] "GET /day6/basic/choose.jsp?browser=FireFox HTTP/1.1" 200 327
+0:0:0:0:0:0:0:1 - - [29/May/2012:01:09:03 +0530] "GET /day6/basic/choose.jsp?browser=Chrome HTTP/1.1" 500 519
+0:0:0:0:0:0:0:1 - - [29/May/2012:01:21:25 +0530] "GET /day6/basic/display1.jsp HTTP/1.1" 200 384
+0:0:0:0:0:0:0:1 - - [29/May/2012:01:23:03 +0530] "GET /day6/basic/choose.jsp?browser=Chrome HTTP/1.1" 500 519
+0:0:0:0:0:0:0:1 - - [29/May/2012:01:25:05 +0530] "GET /day6/basic/choose.jsp?browser=Chrome HTTP/1.1" 500 528

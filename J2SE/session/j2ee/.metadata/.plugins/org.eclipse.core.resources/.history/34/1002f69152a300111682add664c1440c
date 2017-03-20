@@ -1,0 +1,7 @@
+package firstjdbc;
+
+public class Account {
+private String name;
+
+
+}

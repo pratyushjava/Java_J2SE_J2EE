@@ -1,0 +1,51 @@
+package lists;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class TestListCustomer {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Customer> al=new ArrayList<>();
+		
+		System.out.println("enter the no of customers you want to insert");
+		int len=0;
+	
+		Scanner sc=new Scanner(System.in);
+		len=sc.nextInt();
+		for(int i=0;i<len;i++)
+		{
+			String s1=JOptionPane.showInputDialog(null,"enter the id,amail and amt");
+			
+	
+			Scanner sc1=new Scanner(s1);
+			al.add(new Customer(sc1.nextInt(),sc1.next(),sc1.nextInt()));
+			
+		}
+		
+		
+		System.out.println("the customer list you have entered is "+al);
+		String s2=null;
+		
+
+		s2=JOptionPane.showInputDialog(null,"enter the id for search in customer in list");
+		Scanner sc3=new Scanner(s2);
+		int sid=sc.nextInt();
+		if(al.contains(sid))
+		{
+			int index=al.indexOf(sid);
+			System.out.println("the elemen you want to search is"+al.get(index));
+			
+			
+			
+		}
+		
+		
+		
+	}
+	
+
+}

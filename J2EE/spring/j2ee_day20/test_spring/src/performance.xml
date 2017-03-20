@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="engSinger" class="performService.Singer">
+		<property name="language" value="English" />
+		<property name="title" value="Summer Of 69" />
+	</bean>
+
+	<bean id="hindiSinger" class="performService.Singer">
+		<property name="language" value="Hindi" />
+		<property name="title" value="Jay Ho" />
+	</bean>
+
+	<bean id="sJuggler" class="performService.SingingJuggler">
+		<constructor-arg index="0" value="Boxes" />
+		<constructor-arg index="1" value="10" />
+		<property name="song" ref="engSinger" />
+	</bean>
+
+	<bean id="sMagician" class="performService.SingingMagician">
+		<constructor-arg value="Vanishing Persons" />
+
+		<property name="song" ref="hindiSinger" />
+	</bean>
+
+
+
+</beans>

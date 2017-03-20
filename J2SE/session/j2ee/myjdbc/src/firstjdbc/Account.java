@@ -1,0 +1,34 @@
+package firstjdbc;
+
+public class Account {
+private String name;
+private int accno;
+private double balance;
+public Account(String name, int accno, double balance) {
+	
+	this.name = name;
+	this.accno = accno;
+	this.balance = balance;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getAccno() {
+	return accno;
+}
+public void setAccno(int accno) {
+	this.accno = accno;
+}
+public double getBalance() {
+	return balance;
+}
+public void setBalance(double balance) {
+	this.balance = balance;
+}
+
+
+
+}

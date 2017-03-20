@@ -1,0 +1,19 @@
+Steps for oracle
+1.
+create a sequence using PL-SQL ----
+CREATE SEQUENCE my_seq
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+    CACHE 20;
+2.In BookPOJO
+
+@SequenceGenerator(name="seq_gen",sequenceName="my_seq")
+	@Id
+	@GeneratedValue(generator="seq_gen")
+	@Column(name="book_id")
+	private int bookId;
+
+3. If book_id say has reached 30, & then u drop table & generate next row , it shows 31.
+If u want to reset it to 1 ---drop sequence my_seq
+& then it starts with id vals 1.....

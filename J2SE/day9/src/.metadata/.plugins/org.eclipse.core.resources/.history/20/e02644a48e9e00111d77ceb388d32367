@@ -1,0 +1,27 @@
+package shpcart;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Jframesignup extends JFrame {
+
+	JPanel ps1,ps2;
+	JLabel l1,l2,l3;
+	JButton sb1;
+	public Jframesignup(String title)
+	{
+		super(title);
+		setSize(300,300);
+		setLocationRelativeTo(null);
+		
+		
+		
+	}
+	public static void main(String[] args) {
+		
+			new Jframesignup("THIS IS A SIGN UP PAGE");
+	}
+
+}

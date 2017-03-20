@@ -1,0 +1,14 @@
+package shpcart;
+
+public class TestCustomer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Book[] b1=null;
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/mysql_pool" auth="Container" type="javax.sql.DataSource"
+		initialSize="1" maxActive="2" maxIdle="1" maxWait="-1" username="root"
+		password="root" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/testjdbc"
+		removeAbandoned="true" />
+</Context>

@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	font: 15px verdana,arial;
+	text-align:center;
+	color: fuchsia;
+}
+#global {
+	margin:10% auto;
+	padding:10px;
+	width:400px;
+	background:gray;
+	border:1px solid #ccc;
+	text-align:left;
+}

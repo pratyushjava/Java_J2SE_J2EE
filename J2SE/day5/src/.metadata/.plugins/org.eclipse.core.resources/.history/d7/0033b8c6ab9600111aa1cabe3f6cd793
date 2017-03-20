@@ -1,0 +1,16 @@
+package Payroll;
+
+public class Employee {
+	int id;
+	String name;
+	String addr;
+	int deptid;
+	public Employee(int id, String name, String addr, int deptid) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.addr = addr;
+		this.deptid = deptid;
+	}
+	
+}

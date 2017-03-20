@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="basic/user1.jsp" x="1650" y="450" zoom="true"/>
+        <Node id="calc/index.jsp" x="900" y="900" zoom="true"/>
+        <Node id="index.jsp" x="150" y="300" zoom="true"/>
+        <Node id="basic/valueL.jsp" x="900" y="300" zoom="true"/>
+        <Node id="basic/question.jsp" x="1400" y="150" zoom="true"/>
+        <Node id="basic/welcome2.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="basic/DateTimeConverter.jsp" x="1650" y="150" zoom="true"/>
+        <Node id="basic/input4.jsp" x="1400" y="450" zoom="true"/>
+        <Node id="login/greeting.jsp" x="400" y="750" zoom="true"/>
+        <Node id="welcome_convert_payment.jsp" x="150" y="600" zoom="true"/>
+        <Node id="basic/valid.jsp" x="150" y="1200" zoom="true"/>
+        <Node id="basic/greeting.jsp" x="650" y="1050" zoom="true"/>
+        <Node id="welcome_payment.jsp" x="1150" y="450" zoom="true"/>
+        <Node id="payment_convert/payment2.jsp" x="900" y="600" zoom="true"/>
+        <Node id="welcome_search.jsp" x="150" y="750" zoom="true"/>
+        <Node id="welcome_calc.jsp" x="150" y="1350" zoom="true"/>
+        <Node id="welcome_login.jsp" x="650" y="600" zoom="true"/>
+        <Node id="login/login.jsp" x="1150" y="750" zoom="true"/>
+        <Node id="welcome_payment_validate.jsp" x="400" y="150" zoom="true"/>
+        <Node id="basic/*" x="2400" y="150" zoom="true"/>
+        <Node id="basic/input2.jsp" x="150" y="450" zoom="true"/>
+        <Node id="calc/calculator.jsp" x="1400" y="300" zoom="true"/>
+        <Node id="calc/results.jsp" x="400" y="450" zoom="true"/>
+        <Node id="update_table/delete.jsp" x="900" y="150" zoom="true"/>
+        <Node id="payment/payment.jsp" x="900" y="450" zoom="true"/>
+        <Node id="payment_validate/payment.jsp" x="1400" y="600" zoom="true"/>
+        <Node id="basic/panelGrid.jsp" x="400" y="1050" zoom="true"/>
+        <Node id="payment/result.jsp" x="2150" y="150" zoom="true"/>
+        <Node id="basic/dataTable.jsp" x="1900" y="150" zoom="true"/>
+        <Node id="payment_validate/result.jsp" x="400" y="1200" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="650" y="450" zoom="true"/>
+        <Node id="basic/Validators.jsp" x="150" y="900" zoom="true"/>
+        <Node id="guess_num/greeting.jsp" x="1650" y="300" zoom="true"/>
+        <Node id="basic/actionL.jsp" x="900" y="750" zoom="true"/>
+        <Node id="basic/cmdLink.jsp" x="1900" y="300" zoom="true"/>
+        <Node id="payment_convert/result2.jsp" x="400" y="300" zoom="true"/>
+        <Node id="basic/input.jsp" x="400" y="900" zoom="true"/>
+        <Node id="basic/hello.jsp" x="150" y="150" zoom="true"/>
+        <Node id="basic/input3.jsp" x="650" y="300" zoom="true"/>
+        <Node id="basic/welcome.jsp" x="1150" y="600" zoom="true"/>
+        <Node id="search/search-result.jsp" x="150" y="1050" zoom="true"/>
+        <Node id="basic/facetDemo.jsp" x="400" y="600" zoom="true"/>
+        <Node id="basic/validateScript.jsp" x="650" y="150" zoom="true"/>
+        <Node id="guess_num/response.jsp" x="650" y="750" zoom="true"/>
+        <Node id="search/search.jsp" x="1150" y="300" zoom="true"/>
+        <Node id="basic/nodataTable.jsp" x="650" y="900" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

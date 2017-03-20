@@ -1,0 +1,14 @@
+package shpcart;
+import javax.swing.*;
+public class DeleteAccount extends JFrame{
+
+		public DeleteAccount ()
+		{
+			
+		}
+	public static void main(String[] args) {
+			
+		new DeleteAccount("FOR UNREGISTERING THE ACCOUNT");
+	}
+
+}

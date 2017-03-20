@@ -1,0 +1,19 @@
+package shpcart;
+
+public class TestCustomer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Book[] b1={new Book("java","madhura","cdac",500,3),new Book(".net","delhi mam","fast",850,3), new Book("web","sole","hyderabad",3000,3)};
+		
+		Customer[] c1={new Customer(101,"nani"),new Customer(102,"prat"), new Customer(35,"raj")};
+		
+		Scanner sc=new Scanner(System.in);
+		
+		
+	}
+
+}

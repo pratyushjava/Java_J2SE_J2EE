@@ -1,0 +1,5 @@
+package occurances;
+
+public class WordCount {
+
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+\\Acts-adc\userdata$\dac45\Desktop\java@45\session\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2640813082.index
+\day6\src
+\\Acts-adc\userdata$\dac45\Desktop\java@45\session\jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2035606676.index
+\day6\src

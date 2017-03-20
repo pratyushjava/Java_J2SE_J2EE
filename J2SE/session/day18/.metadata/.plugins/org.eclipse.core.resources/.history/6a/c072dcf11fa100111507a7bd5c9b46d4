@@ -1,0 +1,84 @@
+package My_socket_thread;
+import java.net.*;
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.net.ServerSocket;
+
+
+public class MyserverSocet extends JFrame implements ActionListener{
+	
+	public static final int SERVER_PORT=3000;
+	public JTextField jt;
+	public JTextArea jta;
+	public JPanel p;
+	public JScrollPane jsp;
+	public boolean exit=false;
+	public PrintWriter pw;
+	public DataInputStream in;
+
+	
+	public static void main(String[] args) {
+		
+			new MyserverSocet();
+	}
+	public MyserverSocet()
+	{
+		super("server");
+		Socket s=null;
+		try(ServerSocket sc=new ServerSocket(SERVER_PORT,1))
+		{
+			System.out.println("waititng for client");
+			s=sc.accept();
+			System.out.println("accepted connection");
+			pw =new PrintWriter(s.getOutputStream());
+			in=new DataInputStream(s.getInputStream());
+			System.out.println("data strms attached");
+			initGui();
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+			
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	    
+			try{
+	    //	 pw.println(jt.getText());
+	    	// pw.flush();
+	    	 System.out.println("waiting for client response");
+	    	 String s2=in.readUTF();
+	    	 System.out.println(s2);
+	    	 jta.setText(s2);
+	    	
+			}
+			catch (Exception ex) {
+					ex.printStackTrace();
+			}
+	}
+
+public void initGui()
+{
+	  JPanel p1=new JPanel();
+	  p=new JPanel(new GridLayout(3, 2,10,10));
+	  p.add(new JLabel("Send Text"));
+	  jt=new JTextField();
+	  p.add(jt);
+	  jta=new JTextArea(5,10);
+	  p.add(new JLabel("Receive Text"));
+	  p.add(jsp=new JScrollPane(jta=new JTextArea()));
+	  p.add(p1);
+	  add(p);
+     setSize(400, 400);
+     setVisible(true);
+}
+}

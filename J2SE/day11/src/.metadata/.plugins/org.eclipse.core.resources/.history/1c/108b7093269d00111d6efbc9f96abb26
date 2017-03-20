@@ -1,0 +1,18 @@
+package Pbank;
+import java.util.*;
+public class Account {
+	private int id;
+	private String name;
+	private String type;
+	public Account(int id, String name, String type, int balance, Calendar doc) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.balance = balance;
+		this.doc = doc;
+	}
+	private int balance;
+	private Calendar doc;
+
+}

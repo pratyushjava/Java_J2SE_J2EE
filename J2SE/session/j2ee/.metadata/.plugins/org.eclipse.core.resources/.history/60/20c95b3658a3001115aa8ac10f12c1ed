@@ -1,0 +1,9 @@
+package firstjdbc;
+import java.sql.*;
+public class Createconnection {
+public Createconnection(){
+	try{
+	Class.forName("oracle.jdbc.OracleDriver");
+	}
+}
+}

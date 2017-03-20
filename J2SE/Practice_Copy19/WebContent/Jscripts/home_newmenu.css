@@ -1,0 +1,492 @@
+@charset "UTF-8";
+
+/* SpryMenuBarHorizontal.css - version 0.6 - Spry Pre-Release 1.6.1 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/*******************************************************************************
+
+ LAYOUT INFORMATION: describes box model, positioning, z-order
+
+ *******************************************************************************/
+
+/* The outermost container of the Menu Bar, an auto width box with no margin or padding */
+
+#MenuBar1{
+	background:url(menubg1.gif) repeat-x !important;
+	height:26px;
+	float:right;
+	margin-right:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:7.5pt !important;
+
+
+}
+ul.MenuBarHorizontal
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 100%;
+	cursor: default;
+
+	font-size:7.5pt;
+	font-weight:bold;
+	height:26px;
+	width:728px;
+}
+.aboutusmenu{
+	margin-left:1px !important;
+}
+.investorsmenu{
+		margin-left:-150px !important;
+		margin-top:1px !important;
+}
+.areportsmenu{
+	margin-left:-150px !important;
+	margin-top:1px !important;
+}
+.qreportsmenu{
+	margin-left:-150px !important;
+	margin-top:1px !important;
+}
+/* Set the active Menu Bar with this class, currently setting z-index to accomodate IE rendering bug: http://therealcrisp.xs4all.nl/meuk/IE-zindexbug.html */
+ul.MenuBarActive
+{
+	z-index: 1000;
+}
+/* Menu item containers, position children relative to this container and are a fixed width */
+ul.MenuBarHorizontal li
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 100%;
+	position: relative;
+	text-align: left;
+	cursor: pointer;
+	/*width: 8em;*/
+	float: left;
+
+		
+
+}
+/***bvv***/
+.MenuBarHorizontal ul{
+	width:150px !important;
+	font-weight:normal;
+	display:block;
+	background:#F5F5F5;
+	
+
+}
+.MenuBarHorizontal ul li{
+	width:150px !important;
+	font-weight:normal;
+	display:block;
+	border-bottom:1px solid #fff;
+	color:#3C3C3C;
+
+}
+.MenuBarHorizontal ul li a{
+	color:#3C3C3C;
+}
+/********/
+/* Submenus should appear below their parent (top: 0) with a higher z-index, but they are initially off the left side of the screen (-1000em) */
+ul.MenuBarHorizontal ul
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 100%;
+	z-index: 1020;
+	cursor: default;
+	width: 8.2em;
+	position: absolute;
+	left: -1000em;
+}
+/* Submenu that is showing with class designation MenuBarSubmenuVisible, we set left to auto so it comes onto the screen below its parent menu item */
+ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
+{
+	left: auto;
+}
+/* Menu item containers are same fixed width as parent */
+ul.MenuBarHorizontal ul li
+{
+	width: 8.2em;
+}
+/* Submenus should appear slightly overlapping to the right (95%) and up (-5%) */
+ul.MenuBarHorizontal ul ul
+{
+	position: absolute;
+	margin: -5% 0 0 95%;
+}
+/* Submenu that is showing with class designation MenuBarSubmenuVisible, we set left to 0 so it comes onto the screen */
+ul.MenuBarHorizontal ul.MenuBarSubmenuVisible ul.MenuBarSubmenuVisible
+{
+	left: auto;
+	top: 0;
+}
+
+/*******************************************************************************
+
+ DESIGN INFORMATION: describes color scheme, borders, fonts
+
+ *******************************************************************************/
+
+/* Submenu containers have borders on all sides */
+ul.MenuBarHorizontal ul
+{
+	border: 1px solid #CCC;
+}
+/* Menu items are a light gray block with padding and no text decoration */
+ul.MenuBarHorizontal a
+{
+	display: block;
+	cursor: pointer;
+	padding: 0.7em 0.1em;
+	color: #fff;
+	text-decoration: none;
+}
+/* Menu items that have mouse over or focus have a blue background and white text */
+ul.MenuBarHorizontal a:hover, ul.MenuBarHorizontal a:focus
+{
+	background:url(../images/menu_hover.gif) repeat-x  !important;
+	background-color:#f15104 !important;
+	color: #fff !important;
+	display:block;
+	
+}
+/* Menu items that are open with submenus are set to MenuBarItemHover with a blue background and white text */
+ul.MenuBarHorizontal a.MenuBarItemHover, ul.MenuBarHorizontal a.MenuBarItemSubmenuHover, ul.MenuBarHorizontal a.MenuBarSubmenuVisible
+{
+	background-color: transparent;
+	color: #ff8f02;
+}
+
+/*******************************************************************************
+
+ SUBMENU INDICATION: styles if there is a submenu under a given menu item
+
+ *******************************************************************************/
+
+/* Menu items that have a submenu have the class designation MenuBarItemSubmenu and are set to use a background image positioned on the far left (95%) and centered vertically (50%) */
+ul.MenuBarHorizontal a.MenuBarItemSubmenu
+{
+	background-image: url(SpryMenuBarDown.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 80%;
+
+
+}
+/* Menu items that have a submenu have the class designation MenuBarItemSubmenu and are set to use a background image positioned on the far left (95%) and centered vertically (50%) */
+ul.MenuBarHorizontal ul a.MenuBarItemSubmenu
+{
+	background-image: url(SpryMenuBarRight.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	
+}
+/* Menu items that are open with submenus have the class designation MenuBarItemSubmenuHover and are set to use a "hover" background image positioned on the far left (95%) and centered vertically (50%) */
+ul.MenuBarHorizontal a.MenuBarItemSubmenuHover
+{
+	background-image: url(SpryMenuBarDownHover.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	
+}
+/* Menu items that are open with submenus have the class designation MenuBarItemSubmenuHover and are set to use a "hover" background image positioned on the far left (95%) and centered vertically (50%) */
+ul.MenuBarHorizontal ul a.MenuBarItemSubmenuHover
+{
+	background-image: url(SpryMenuBarRightHover.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+}
+
+/*******************************************************************************
+
+ BROWSER HACKS: the hacks below should not be changed unless you are an expert
+
+ *******************************************************************************/
+
+/* HACK FOR IE: to make sure the sub menus show above form controls, we underlay each submenu with an iframe */
+ul.MenuBarHorizontal iframe
+{
+	position: absolute;
+	z-index: 1010;
+	filter:alpha(opacity:0.1);
+}
+/* HACK FOR IE: to stabilize appearance of menu items; the slash in float is to keep IE 5.0 from parsing */
+@media screen, projection
+{
+	ul.MenuBarHorizontal li.MenuBarItemIE
+	{
+		display: inline;
+		f\loat: left;
+		background-color: transparent;
+		color: #ff8f02;
+	}
+}
+
+/*********** FOR LOGIN ACCORDIAN MENU STYLES ***************/
+#Logindropdown{
+
+
+	width:300px;
+	position:absolute;
+	z-index:9999;
+	border:1px solid #b50128;
+
+	/*height:194px for if skyagent is not present*/
+	margin-top:-9px;
+	float:right;
+
+
+}
+.Accordion {
+	border-left: solid 1px gray;
+	border-right: solid 1px black;
+	border-bottom: solid 1px gray;
+	overflow: hidden;
+	
+
+}
+
+.AccordionPanel2 {
+	margin: 0px;
+	padding: 0px;
+	background:#F6F6F6;
+	width:100%;
+}
+
+
+.AccordionPanelTab2{
+
+	/*background:url(../images/panelbg.gif) repeat-x;*/
+	background-color:#9c9b9b;
+	margin: 0px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	height:16px;
+
+	color:#fff;
+	text-align:left;
+	padding-left:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:8.8pt;
+	font-weight:bold;
+	padding-top:4px;
+	border-bottom:1px solid #DEDDDD;
+}
+
+
+.AccordionPanelContent2 {
+	overflow: visible;
+	margin: 0px;
+	padding: 0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	text-align:left;
+	padding-left:8px;
+	background-color: #F6F6F6 !important;
+}
+
+.AccordionPanelTabHover2 {
+	color: #555555;
+	background-color: #f0f0f0;
+	
+}
+.AccordionPanelOpen2 {
+	color: #fff;	
+	overflow:visible;
+	padding-top:0;
+	margin-top:0;
+	background:#b50128;
+	
+}
+.AccordionPanelTabHover2 {
+	color: #ffffff;
+	background-color:#b50026;
+	
+}
+
+
+
+.AccordionFocused2 {
+/*	background-color: #33CCFF;*/
+	background-color: #f0f0f0;
+}
+
+.AccordionFocused2 .AccordionPanelOpen2 .AccordionPanelTab2 {
+	background-color: #b50128 !important;
+	color:#fff;
+	z-index:99999;
+}
+
+.btnLogin{
+cursor:pointer; 
+*margin-bottom:-2px;
+}
+.logintable{
+width:290px;
+padding:0;
+margin:0;
+padding:8px;
+padding-left:0;
+
+
+}
+.guestdiv {
+
+overflow:visible;
+margin-top:5px;
+clear:both;
+
+}
+.agencydiv{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	overflow:hidden;
+
+	display:block;
+
+}
+.corporatediv{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	overflow:hidden;
+
+	display:block;
+
+}
+.guestlabel {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	white-space:nowrap;
+	
+}
+
+.subagent{
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	overflow:hidden;
+
+	display:block;
+}
+
+.guestinput {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+margin-left:13px;
+margin-bottom:3px;
+}
+
+.guestpwdinput {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+margin-left:7px;
+}
+
+
+.agencyinput {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+margin-left:5px;
+margin-bottom:3px;
+}
+
+.agencypwdinput {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+margin-left:7px;
+}
+
+.guestregister {
+
+color:#000;
+float:left;
+}
+
+.userid {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+
+margin-bottom:3px;
+}
+
+.userpwd {
+border:1px solid #9a9a9a;
+width:84px;
+height:16px;
+color:#464646;
+
+}
+
+.signinbtn {
+
+margin-top:10px;
+padding-bottom:5px;
+background:url(../images/btn_signin.gif) no-repeat;
+width:58px;
+height:25px;
+border:0;
+display:block;
+cursor:pointer;
+
+}
+.forgotpwd {
+padding-top:5px;
+padding-left:10px;
+
+}
+
+.linksred {
+color:#b50026;
+text-decoration:none;
+}
+
+.linksred a{
+color:#b50026;
+text-decoration:none;
+}
+
+.linksred a:links{
+color:#b50026;
+text-decoration:none;
+}
+
+
+.linksred a:hover{
+color:#b50026 !important;
+text-decoration:none;
+
+}
+
+/******************************************************/
+.logintxtbox{
+border:1px solid #9a9a9a;
+width:198px;
+height:16px;
+color:#464646;
+}
+.loginsubagenttxtbox{
+border:1px solid #9a9a9a;
+width:140px;
+height:16px;
+color:#464646;
+}

@@ -1,0 +1,40 @@
+package occurances;
+
+import java.util.*;
+
+public class WordCount {
+	
+	String line;
+	
+	public WordCount(String line) {
+		super();
+		this.line = line;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "WordCount [line=" + line + "]";
+	}
+
+
+
+	public static void main(String[] args) {
+		HashSet<WordCount> hs= new HashSet<>();
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a line of statement");
+		WordCount wc=new WordCount(sc.next());
+		
+		Iterator<WordCount> itr=hs.iterator();
+		
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		
+		System.out.println("using hs"+hs);
+	}
+	
+}

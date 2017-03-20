@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<package name="basic" namespace="/basic" extends="struts-default">
+		<action name="welcome">
+			<result>/basic/hello.jsp</result>
+		</action>
+		<action name="login" class="simple_actions.LoginAction">
+			<result>/basic/valid.jsp</result>
+		</action>
+		<action name="login1" class="simple_actions.LoginAction1">
+			<result>/basic/valid.jsp</result>
+			<result name="error">/basic/invalid.jsp</result>
+		</action>
+		<action name="login2" class="simple_actions.LoginAction2">
+			<result>/basic/valid_id.jsp</result>
+			<result name="error">/basic/invalid_id.jsp</result>
+		</action>
+
+		<!-- cust care related actions from same action class -->
+		<action name="log_complaint" class="simple_actions.CustCareAction"
+			method="showForm">
+
+			<result>/basic/cust_reg.jsp</result>
+		</action>
+
+		<action name="complaint_added" class="simple_actions.CustCareAction"
+			method="addComplaint">
+			<result>/basic/reg_succ.jsp</result>
+
+		</action>
+		<action name="validate" class="validate_actions.LoginValidate">
+			<result>/basic/registered.jsp</result>
+			<result name="input">/basic/register.jsp</result>
+		</action>
+	<!-- CSS related -->
+	<action name="user" class="simple_actions.UserAction">
+			<result>/pages/User.jsp</result>
+			<result name="input">/pages/User.jsp</result>
+		</action>
+	
+	<!-- DatePicker related -->
+	<action name="date_picker" class="simple_actions.DatePickerAction">
+	<result>/pages/date_picker.jsp</result>
+	</action>
+	<action name="display" class="simple_actions.DatePickerAction">
+	<result>/pages/display.jsp</result>
+	</action>
+	</package>
+	<package name="test_locale" namespace="/locale" extends="struts-default">
+		<action name="locale" class="locale_actions.LocaleAction">
+			<result name="SUCCESS">/pages/login.jsp</result>
+		</action>
+		<action name="login">
+			<result>/pages/login.jsp</result>
+		</action>
+		<action name="validateUser" class="locale_actions.LoginAction">
+			<result>/pages/welcome.jsp</result>
+			<result name="input">/pages/login.jsp</result>
+		</action>
+	</package>
+	<package name="test_upload" namespace="/upload" extends="struts-default">
+		<action name="file_upload" class="upload_actions.FileUploadAction">
+			<param name="folder_name">g:/upload_images/</param>
+			<result>/pages/upload_succ.jsp</result>
+			<result name="input">/pages/try_upload.jsp</result>
+			<result name="error">/pages/err_upload.jsp</result>
+		</action>
+	</package>
+	<!-- keeping tiles defs in separate xml file -->
+	<include file="my_tiles.xml"></include>
+</struts>

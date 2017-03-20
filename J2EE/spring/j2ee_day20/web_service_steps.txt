@@ -1,0 +1,21 @@
+Steps in creating simple web service based on JAX-WS using Axis Framework.(Axis2 - 1.4.1)
+1.Enable Axis support in Eclipse Helios.
+window-->preferences-->web services--->Axis 2 preferences-->Axis  runtime  
+supply Axis home. 
+Select Window -> Preference and set Axis2 as the default engine.(from server & runtime option)
+2. For the web service provider ---
+Create dyn web project & in <src> , create Service imple. class.
+3 R-click on Service imple class --- web service option--> create web service --->botom up java bean -- choose axis 2 framework-- create new service xml files-- no need to publish the service
+4 Run project (index.jsp) -- show axis page & from services -- show ur service & gives u the wsdl url & wsdl doc for the same.
+
+
+5. Creating web service clnt --
+Create  another dyn web project-- web-service-clnt
+R-click on project -- new -- web service clnt -- asks for the service def.--supply the wsdl url generated in step 4 of the server side.
+It creates the service stub class under pkged folder in <src>
+6. Create JSP/servlet/JB to access web service.
+6.1 Create inst of stub class
+6.2 Create Method  instance.
+6.3 Using setter methods -- supply method args.
+6.4 Invoke the meth on proxy inst(created in 6.1) by supplying the method inst . (created in step 6.2) -- which rets meth response obj.
+6.5 Acces the meth resp obj -- to get ret vals 

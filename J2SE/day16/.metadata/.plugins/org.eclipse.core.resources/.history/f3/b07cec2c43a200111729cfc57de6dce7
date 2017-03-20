@@ -1,0 +1,28 @@
+package Bounce;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BounceFrame extends JFrame {
+	
+	JButton b1,b2;
+	JPanel p1;
+	public BounceFrame() {
+		super("my bouncing frame");
+		setLocationRelativeTo(null);
+		setSize(300,300);
+		b1=new JButton("Start");
+		b2=new JButton("top");
+		
+	
+	}
+	
+	public class Mypanel extends JPanel{
+		public Mypanel(){
+			
+		}
+	}
+	
+
+}

@@ -1,0 +1,51 @@
+package shpcart;
+
+import java.util.*;
+
+public class Customer {
+
+	
+	private int id;
+	private String name;
+	private String email;
+	private GregorianCalendar gc;
+	
+	public Address Contact;
+	
+	ArrayList<Book> book;
+	
+	
+	public Customer(int id, String name, String email, GregorianCalendar gc,
+			Address contact) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.gc = gc;
+		Contact = contact;
+	}
+
+
+	public class Address
+	{
+		private int countrycode;
+		private int statecode;
+		private int zipcode;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", email=" + email
+				+ ", gc=" + gc + "]";
+	}
+	
+	public void bookOnCart(Book b)
+	{
+		book=new ArrayList<>();
+		book.add(b);
+	}
+	
+	
+	
+}

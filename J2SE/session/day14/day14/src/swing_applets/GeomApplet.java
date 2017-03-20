@@ -1,0 +1,115 @@
+package swing_applets;
+
+import javax.swing.Box;
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class GeomApplet extends JApplet implements ActionListener{
+	private static int NO_OF_SHAPES=2;
+	private static int NO_OF_COLORS=3;
+	MyPanel p1;
+	private Color c1;
+	private JButton[] btns;
+	private String shape;
+
+	@Override
+	public void init() {
+		System.out.println("init by "+Thread.currentThread().getName());
+	//	getContentPane().setBackground(Color.YELLOW);
+		JPanel p2=new JPanel(new GridLayout(1,3, 20,10));
+	//	JPanel p3=new JPanel(new GridLayout(2,1, 5,10));
+		String[] lbls={"Red","Green","Blue","Rect","Circle"};
+		btns=new JButton[NO_OF_COLORS+NO_OF_SHAPES];
+		for (int i=0;i<NO_OF_COLORS;i++)
+		{
+			btns[i]=new JButton(lbls[i]);
+			btns[i].addActionListener(this);
+			p2.add(btns[i]);
+		}
+		//creates empty vert box
+		Box vertBox=Box.createVerticalBox();//this is going to return the vertical box which displays its component from top to bottom
+		//creates vspace of 50 pics
+		vertBox.add(Box.createVerticalStrut(50));
+		for (int i=NO_OF_COLORS;i<NO_OF_COLORS+NO_OF_SHAPES;i++)
+		{
+			btns[i]=new JButton(lbls[i]);
+			btns[i].addActionListener(this);
+			vertBox.add(btns[i]);
+			vertBox.add(Box.createVerticalStrut(50));
+		}
+		add(p2,BorderLayout.SOUTH);
+		add(vertBox,BorderLayout.WEST);
+		p1=new MyPanel();
+		add(p1);
+		shape="Rect";
+		c1=Color.RED;
+		
+	}
+	@Override
+	public void start() {
+		System.out.println("start by "+Thread.currentThread().getName()+p1.getSize().width);
+		
+	}
+	@Override
+	public void stop() {
+		System.out.println("stop by "+Thread.currentThread().getName());
+		
+	}
+	public void paint(Graphics g){
+		super.paint(g);
+		System.out.println("paint by "+Thread.currentThread().getName());
+		}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	//	System.out.println("in action");
+		JButton b=(JButton)e.getSource();
+		try {
+		
+		if (b== btns[0]) {
+			c1=Color.RED;
+			return;
+		}
+		if (b== btns[1]) {
+			c1=Color.GREEN;
+			return;
+		}
+		if (b== btns[2]) {
+			c1=Color.BLUE;
+			return;
+		}
+		if (b == btns[3])
+			shape="Rect";
+		else 
+			shape="Circle";
+				
+		} finally {
+			
+			p1.repaint();//prog request ---for painting  
+		}
+		
+			
+		
+	}
+
+	class MyPanel extends JPanel
+	{
+		@Override
+		public void paintComponent(Graphics g)
+		{
+		//	System.out.println("in paintC");
+			super.paintComponent(g);
+			g.setColor(c1);
+			if (shape.equalsIgnoreCase("rect"))
+				g.fillRect(80,20,100,100);
+			else
+				g.fillOval(80,20,150,150);
+		}
+	}
+  
+}

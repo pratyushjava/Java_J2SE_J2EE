@@ -1,0 +1,87 @@
+create table my_emp (
+empid int primary key,
+name varchar(20),
+addr varchar(20),
+salary double,
+deptid varchar(10),join_date date);
+insert into my_emp values(1,'aa','pune',1500,'rnd','1997-11-18');
+insert into my_emp values(2,'ab','chennai',2500,'prod','1996-1-20');
+insert into my_emp values(3,'cc','nagpur',3500,'rnd','1999-11-18');
+insert into my_emp values(4,'dd','satara',3000,'prod','2005-1-20');
+
+
+
+
+create table items
+(id int(3) primary key auto_increment,dscr varchar(30),price double(6,1));
+insert into items (dscr,price) values('Core Java Books',500);
+insert into items (dscr,price) values('Java EE Books',600);
+insert into items values('XML Books',400);
+insert into items values('.NET Books',700);
+insert into items values('CORBA Books',300);
+
+
+
+
+
+create table stock_users (id int(3) primary key,pin int(6),name varchar(20),bal double(6,1));
+insert into stock_users values(101,1234,'aa',1000);
+insert into stock_users values(102,1235,'ab',2000);
+insert into stock_users values(103,1236,'ac',3000);
+
+create table stock_info(id int(3) primary key,name varchar(20),dscr varchar(30),price double(6,1),quantity int(5));
+insert into stock_info values (1,'tata','low-risk,medium-gain',100,150);
+insert into stock_info values (2,'tcs','medium-risk,medium-gain',150,250);
+insert into stock_info values(3,'reliance','high-risk,high-gain',200,300);
+
+
+create table bank_users(id int(3) primary key,name varchar(20),
+password varchar(20));
+insert into bank_users values(1,'a','b');
+insert into bank_users values(2,'c','d');
+insert into bank_users values(3,'e','f');
+
+
+create table bank_accounts(ac_no int(3) primary key,id int(3) ,type varchar(10),bal double(6,1),CONSTRAINT fk_users
+    	  FOREIGN KEY (id)
+    	  REFERENCES bank_users(id));
+insert into bank_accounts values(101,1,'NRO',1000);
+insert into bank_accounts values(102,1,'NRE',2000);
+insert into bank_accounts values(103,2,'SAV',3000);
+insert into bank_accounts values(104,20,'SAV',3000);//this will not work as integrity constr. parent key not found.
+
+
+
+//to selecte all account's info for given user id
+select a.ac_no,a.type,a.bal from bank_users u,bank_accounts a where
+u.id=1 and u.id=a.id;
+
+
+CREATE TABLE person (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT primary key,
+  firstName VARCHAR(45) NOT NULL,
+  lastName VARCHAR(45) NOT NULL);
+
+
+create table accounts(id int(3) auto_increment primary key ,name varchar(20),type varchar(10),bal double);
+insert into accounts (name,type,bal) values ('aa','sav',1500);
+insert into accounts (name,type,bal) values ('bb','sav',2500);
+
+ drop procedure update_account;
+
+DELIMITER $$
+create   procedure update_account (
+ IN sid int ,
+ in did int,
+ in amt double ,
+ out sbal double,
+ out dbal double 
+) 
+
+begin
+update accounts set bal=bal-amt where id=sid;
+update accounts set bal=bal+amt where id=did;
+select bal into sbal from accounts where id=sid;
+select bal into dbal from accounts where id=did;
+end$$
+ DELIMITER ;

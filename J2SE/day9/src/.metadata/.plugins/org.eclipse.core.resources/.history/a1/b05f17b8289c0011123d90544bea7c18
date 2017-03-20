@@ -1,0 +1,21 @@
+package shpcart;
+
+import java.util.*;
+
+public class Customer {
+
+	
+	private int id;
+	private String name;
+	private String email;
+	private GregorianCalendar gc;
+	
+	Address Contact;
+	
+	public class Address
+	{
+		private int countrycode;
+		private int statecode;
+		private int zipcode;
+	}
+}

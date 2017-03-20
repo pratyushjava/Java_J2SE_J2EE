@@ -1,0 +1,43 @@
+No additional concepts here....
+Just combine the steps for individual frmworks & test the integration.
+Recommended layers ---- View -- JSP, Controller --- struts supplied filters+interceptors. Model --- Business Actions ---> Service layer(only if B.L is too complex) , --->DAO layer (based on Hib. API) -->POJO (using Hib. annotations) --> DB
+
+
+Steps for creating struts 2 +Hibernate aware web-appln project
+ 
+1. Create dyn web project.
+2. Copy struts2 - basic required jars to web-inf\lib
+2. To ensure that - all requests sent from clnt -- are intercepted by Struts 2 frmwork supplied filter component modify web.xml : to make the entry of the filter : entry point in struts 2 frmwork : FilterDispatcher
+<filter >
+ <filter-name>struts2</filter-name>
+ <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+ 
+</filter>
+	
+<filter-mapping>
+ <filter-name>struts2</filter-name>
+ <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+3. Copy from struts2_help -  struts.xml (Navigation controller provided by the struts frmwork) & chk by pass-thro' action.
+
+4. To add hibernate support -- add hibernate related jars to web-inf/lib.
+add hib. jars to web-inf/lib
+3.  create hibernate.cfg.xml : loc : run-time classpath(i.e under src : from IDE)
+4. Identify persistence requirements & wrap it in POJO class
+5. Generate the POJO.hbm.xml : to desc. the mapping to the Hib. frmwork OR use hibernate annotations to avoid writing HBM document
+Annotation support from pkg : javax.persistence
+
+Current Objective --- dev contact mgr utility --
+POJO --- Contact
+(userName,email,password,homePage,dob,subscription)
+
+6. Run time steps : 
+6.1 Create the singleton inst. of the Hib. SF -- in HibernateUtils class.
+6.2 Use Context Listener class : to load HibernateUtils class -- so that via static block , singleon inst of the SF will be ready. 
+6.2 Open Hib sesion
+6.3 beginTx
+6.4 perform CRUD operations(eg : save/persist/delete/update/HQL)
+6.5 if no errs : commit Tx & close the session.--in case of errs , rollback the tx.
+
+7. Only difference will be, in  struts2-Hibernate scenario --- ur struts actions will be creating DAO instance & invoking the persistence method as per requirement.

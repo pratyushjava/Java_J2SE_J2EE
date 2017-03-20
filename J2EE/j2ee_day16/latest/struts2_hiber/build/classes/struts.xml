@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<package name="/basic" namespace="/basic" extends="struts-default">
+		<action name="test">
+			<result>/basic/welcome.jsp</result>
+		</action>
+		<action name="index"
+			class="actions.ContactAction">
+			<result name="success">index.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		<!-- <action name="add"
+			class="actions.ContactAction" method="add">
+			<result name="success" type="chain">index</result>
+			<result name="input" type="chain">index</result>
+		</action>-->
+		<action name="add"
+			class="actions.ContactAction" method="add">
+			<result name="success" type="redirectAction">index</result>
+			<result name="input" type="chain">index</result>
+		</action>
+		
+		<action name="delete"
+			class="actions.ContactAction" method="delete">
+			<result name="success" type="chain">index</result>
+		</action>
+		
+
+	</package>
+
+
+</struts>

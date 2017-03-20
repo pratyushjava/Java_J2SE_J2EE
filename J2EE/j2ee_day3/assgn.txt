@@ -1,0 +1,24 @@
+1.Create Java EE compliant web-appln structure & test the HTML content from the same.
+
+(involves the testing/runing of Tomcat Web srvr & clnt)
+
+2. Enable the tomcat manager context & test it.
+(username = manager , password blank)
+
+
+3.Create a web-appln without IDE & test creation  of the WelcomeServlet & compile the same.
+
+
+4. Create a web-appln without IDE & test deployment of the WelcomeServlet using HTML form , which accepts the user name(text field)  & preferences(text field) & displays the same to the user.
+
+5. create a web application without IDE . Write HTML form for accepting following details from the Customer/User
+a.	Customer Name(textbox)
+b.	Email(textbox)
+c.	Password(password field)
+d.	O.S Used(Drop down single selection list) 
+e.	Technology Used (multiple-selectable check boxes) 
+f.	Problem Description(textarea)
+g.	Register Me : submit button for sending these details to the CustomerServlet.
+
+Display the accepted customer details using  dyn. Content(try both get & post methods & understand the difference)
+

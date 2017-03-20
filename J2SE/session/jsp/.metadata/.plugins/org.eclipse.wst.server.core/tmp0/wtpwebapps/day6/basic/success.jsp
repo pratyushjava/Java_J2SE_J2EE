@@ -1,0 +1,1 @@
+<h3>Your selection is supported --- <%= browser1 %></h3>

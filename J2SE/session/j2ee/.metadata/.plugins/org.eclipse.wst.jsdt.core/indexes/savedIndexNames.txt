@@ -1,0 +1,5 @@
+INDEX VERSION 1.122+\\Acts-adc\userdata$\dac45\Desktop\java@45\session\j2ee\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2701284951.index
+287736444.index
+2192468585.index
+1039599052.index

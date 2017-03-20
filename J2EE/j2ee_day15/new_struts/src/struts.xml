@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts SYSTEM "struts2.dtd">
+<struts>
+	<!-- If devMode is set true auto reloading of web-appln is enabled -->
+	
+	<constant name="struts.devMode" value="true" />
+	<!-- to set up global property name -->
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<package name="basic" namespace="/basic" extends="struts-default">
+		<action name="hello">
+			<result>/basic/welcome.jsp</result>
+		</action>
+		<action name="login" class="simple_actions.LoginAction">
+			<result>login_success.jsp</result>
+			<result name="error">login_error.jsp</result>
+		</action>
+
+		<action name="register" class="simple_actions.RegisterAction">
+			<result>/basic/registered.jsp</result>
+			<result name="input">/basic/register.jsp</result>
+		</action>
+
+		<action name="user" class="simple_actions.UserAction">
+			<result>user_details.jsp</result>
+			<result name="error">user_err.jsp</result>
+
+		</action>
+		<action name="logout" class="simple_actions.LogOutAction">
+			<result>logout.jsp</result>
+		</action>
+
+		<!-- cust care related actions from same action class -->
+		<action name="log_complaint" class="simple_actions.CustCareAction"
+			method="showForm">
+
+			<result>/basic/cust_reg.jsp</result>
+		</action>
+
+		<action name="complaint_added" class="simple_actions.CustCareAction"
+			method="addComplaint">
+			<result>/basic/reg_succ.jsp</result>
+
+		</action>
+
+
+	</package>
+	<!-- separate package for validations & locale related actions -->
+	<package name="locale" namespace="/locale" extends="struts-default">
+		<!-- pass-thro action for changing to this pkg -->
+		<action name="validate">
+			<result>/locale/validations.jsp</result>
+		</action>
+
+		<action name="validate_user1" class="locale_actions.LoginAction1">
+			<result>welcome.jsp</result>
+			<result name="input">/locale/login1.jsp</result>
+		</action>
+		<action name="validate_user2" class="locale_actions.LoginAction2">
+			<result>welcome.jsp</result>
+			<result name="input">login2.jsp</result>
+		</action>
+		<action name="locale" class="locale_actions.LocaleAction">
+			<result name="SUCCESS">/locale/login.jsp</result>
+		</action>
+		<action name="validateUser" class="locale_actions.LoginAction">
+			<result>welcome.jsp</result>
+			<result name="input">/locale/login.jsp</result>
+		</action>
+		<!-- validations via xml -->
+		<action name="register" class="register.RegisterAction">
+			<result>registered.jsp</result>
+			<result name="input">register.jsp</result>
+		</action>
+
+	</package>
+	<package name="test" namespace="/file_upload" extends="struts-default">
+	<!-- pass-thro action for changing to this pkg -->
+		<action name="test_file_upload">
+			<result>upload.jsp</result>
+		</action>
+	
+		<action name="upload" class="upload_action.FileUploadAction">
+			<param name="uploadFolder">g:/upload_images/</param>
+			<result>uploaded.jsp</result>
+			<result name="input">upload.jsp</result>
+		</action>
+	</package>
+	<include file="struts_emp.xml" />
+
+
+</struts>

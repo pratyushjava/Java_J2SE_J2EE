@@ -1,0 +1,5 @@
+package custexception;
+
+public class AgeExcep {
+
+}

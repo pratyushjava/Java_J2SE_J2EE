@@ -1,0 +1,23 @@
+package shop;
+import java.util.*;
+public class Customer {
+	private int id;
+	private String email;
+	private Date dob;
+	private String items;
+/*	public class ContactInfo
+	{
+		int countrycode;
+		int statecode;
+		int zipcode;
+		int phoneno;
+	}*/
+	public Customer(int id, String email, Date dob, String items) {
+		this.id = id;
+		this.email = email;
+		this.dob = dob;
+		this.items = items;
+	}
+	
+
+}

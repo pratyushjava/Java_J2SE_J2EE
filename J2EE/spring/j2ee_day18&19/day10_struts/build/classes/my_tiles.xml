@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="test" namespace="/test" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<!-- all below actions can actually be written as def. actions w/o class -->
+		<action name="home" class="tiles_actions.Home">
+			<result  type="tiles">struts2tiles.home</result>
+		</action>
+		<action name="page1" class="tiles_actions.Page1">
+			<result  type="tiles">struts2tiles.page1</result>
+		</action>
+		<action name="page2" class="tiles_actions.Page2">
+			<result  type="tiles">struts2tiles.page2</result>
+		</action>
+	</package>
+</struts>

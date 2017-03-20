@@ -1,0 +1,7 @@
+package Bounce;
+
+import jframe;
+
+public class BounceFrame extends jframe {
+
+}

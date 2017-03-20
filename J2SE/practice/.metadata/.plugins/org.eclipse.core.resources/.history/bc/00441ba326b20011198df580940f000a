@@ -1,0 +1,22 @@
+package lists;
+
+public class Customer {
+	
+	
+	private int id;
+	private String email;
+	private String amt;
+	public Customer(int id, String email, String amt) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.amt = amt;
+	}
+	public Customer(int id) {
+		super();
+		this.id = id;
+	}
+	
+	
+
+}

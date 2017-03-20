@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="bank" namespace="/bank" extends="struts-default">
+		<action name="test">
+			<result>/pages/welcome.jsp</result>
+		</action>
+		<action name="bank_login" class="actions.BankLoginAction"
+			method="validateUser">
+			<result>/pages/login_success.jsp</result>
+			<result name="input">/pages/bank_login.jsp</result>
+			<result name="error">/pages/login_err.jsp</result>
+		</action>
+		<action name="create_ac" class="actions.CreateAccount" method="createAccount">
+			<result>/pages/login_success.jsp</result>
+			<result name="input">/pages/bank_login.jsp</result>
+			<result name="error">/pages/login_err.jsp</result>
+		</action>
+	</package>
+</struts>

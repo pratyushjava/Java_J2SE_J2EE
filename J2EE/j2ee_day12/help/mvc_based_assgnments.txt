@@ -1,0 +1,14 @@
+1. Fast Car Ltd is a car company.  It manufactures cars. For the raw materials , it deals with its vendors. It maintains their DB.
+Links on welcome page --- View All Vendors --- goes to servlet controller --- gets vendor list & disp the same from JSP  --- think about flow once again !!!!!!!!!!!!!
+1.1 Design 1st JSP -- ViewAll.jsp --- which displays Vendor List in table form. It should display , 1st column Vendor ID hyperlinked, 2nd column Vendor Name  and 3rd column Delete hyperlink. It should have submit button  -- Add Vendor Record.
+Note -- This vendor list should be uploaded from DB, as per vendors table.(vendors DB table must have ---Vendor ID as prim key,Vendor Name, City , phone no -- At  startup  phase -- add some vendor records in table)
+
+1.2 On click of Vendor ID hyper link, navigate to ViewDetails.jsp , which displays details of corresponding vendor. (Hint - Use query string to pass Vendor ID on click of hyperlink)
+1.3 On click of 'Add Vendor Record' button, navigate to insert.jsp , which should display a form -- to Accept -- Vendor Name,City and Phone no. Add submit button 'Insert Vendor' 
+
+1.4 On click of 'Insert Vendor' button --- navigate to servlet -- InsertServlet which will do ---
+Get Data from JSP page & call method insertData(String vendorName,String city,int/long  phone no) from Java Bean.
+
+Note --- Try above requirement first with simple JSP,Servlet, JavaBean , DAO(JDBC based) and Vendor POJO layers.
+Then above can be modified to test on Hibernate.(only DAO layer needs to be modified)
+

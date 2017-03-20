@@ -1,0 +1,5 @@
+#Tue May 29 00:48:05 IST 2012
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="1">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n</web-browsers>
+browser-choice=1
+eclipse.preferences.version=1
+internalWebBrowserHistory=http\://localhost\:8080/day6/basic/login.jsp?email\=a@b&pass\=123|*|http\://localhost\:8080/day6/basic/login.html|*|http\://localhost\:8080/day6/basic/login.jsp?email\=101&pass\=pass|*|

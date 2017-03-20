@@ -1,0 +1,28 @@
+Using Native SQL
+The second technique (and recommended one) is to call a stored procedure using native query with standard stored procedure calling syntax of JDBC. The following code demonstrates it.
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class CallSP {
+
+    public static void main(String[] args) throws Exception  {
+
+        Configuration c = new Configuration().configure();
+        SessionFactory sf = c.buildSessionFactory();
+        Session session = sf.openSession();
+        session.beginTransaction();
+
+        Query q = session.createSQLQuery(" { call changesalary(?,?) }");
+        q.setInteger(0,100);  // first parameter, index starts with 0
+        q.setInteger(1,4000); // secon parameter
+        q.executeUpdate();
+        session.getTransaction().commit();
+        session.close();
+        sf.close();
+    }
+}
+
+

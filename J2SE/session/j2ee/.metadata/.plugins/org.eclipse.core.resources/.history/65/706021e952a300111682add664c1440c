@@ -1,0 +1,11 @@
+package firstjdbc;
+
+public class ActionForm {
+	public static void main(String[] args) {
+		new ActionForm();
+	}
+	ActionForm(){
+		
+	}
+
+}

@@ -1,0 +1,91 @@
+CREATE SEQUENCE my_seq
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+    CACHE 20;
+create table billing(mob_no varchar2(20) primary key,name varchar2(10),call_duration number(5),total_bill number(6,1));
+insert into billing values('12345','aa',100,50);
+insert into billing values('12344','bb',150,70);
+insert into billing values('12346','cc',80,40);
+insert into billing values('12347','dd',180,240);
+update billing set call_duration=100,total_bill=120 where mob_no='12347';
+
+create table my_accounts (ac_no number(3) primary key,pin number(3) ,name varchar2(10),type varchar2(10),bal number(6,1))
+
+insert into my_accounts values (100,123,'rama','SAV',1000);
+insert into my_accounts values (101,121,'priya','SAV',2000);
+create table items
+(id number(3),dscr varchar2(30),price number(6,1));
+insert into items values(1,'Core Java Books',500);
+insert into items values(2,'Java EE Books',600);
+insert into items values(3,'XML Books',400);
+insert into items values(4,'.NET Books',700);
+insert into items values(5,'CORBA Books',300);
+
+
+create table books
+(id number(3) primary key,title varchar2(10),author varchar2(10),category varchar2(10),price number(6,1));
+
+
+create table shop_customers (id number(3),name varchar2(20),password
+varchar2(20),email varchar2(20), card_lim number(6,1));
+insert into shop_customers values(101,'a','b','a@b',2000);
+insert into shop_customers values(102,'c','d','c@d',3000);
+insert into shop_customers values(103,'e','f','e@f',4000);
+
+create table stock_users (id number(3) primary key,pin number(6),name varchar2(20),bal number(6,1));
+insert into stock_users values(101,1234,'aa',1000);
+insert into stock_users values(102,1235,'ab',2000);
+insert into stock_users values(103,1236,'ac',3000);
+
+create table stock_info(id number(3) primary key,name varchar2(20),dscr varchar2(30),price number(6,1),quantity number(5));
+insert into stock_info values (1,'tata','low-risk,medium-gain',100,150);
+
+insert into stock_info values (2,'tcs','medium-risk,medium-gain',150,250);
+insert into stock_info values(3,'reliance','high-risk,high-gain',200,300);
+insert into stock_info values (4,'tata','low-risk,low-gain',150,160);
+insert into stock_info values (5,'tata','med-risk,low-gain',180,200);
+
+
+
+
+create table bank_users(id number(3) primary key,name varchar2(20),
+password varchar2(20));
+insert into bank_users values(1,'a','b');
+insert into bank_users values(2,'c','d');
+insert into bank_users values(3,'e','f');
+insert into bank_users values(4,'abc','efg*123');
+
+
+create table bank_accounts(ac_no number(3) primary key,id number(3) ,type varchar2(10),bal number(6,1),idx number(3),CONSTRAINT fk_users
+    	  FOREIGN KEY (id)
+    	  REFERENCES bank_users(id));
+insert into bank_accounts values(101,1,'NRO',1000,0);
+insert into bank_accounts values(102,1,'NRE',2000,1);
+insert into bank_accounts values(103,2,'SAV',3000,2);
+
+insert into bank_accounts values(104,20,'SAV',3000);//this will not work as integrity constr. parent key not found.
+insert into bank_accounts values(105,4,'SAV',1000,3);
+insert into bank_accounts values(106,4,'CHK',2000,4);
+insert into bank_accounts values(107,4,'SAV',3000,5);
+insert into bank_accounts values(108,4,'CHK',4000,6);
+
+
+
+
+
+//to selecte all account's info for given user id
+select a.ac_no,a.type,a.bal from bank_users u,bank_accounts a where
+u.id=1 and u.id=a.id;
+
+insert into new_books values(1,'abc','aa',100);
+insert into new_books values(2,'abc1','aa',100);
+insert into new_books values(3,'abc2','bb',100);
+insert into new_books values(4,'abc3','bb',100);
+
+
+insert into accounts values (1,'nn','chk',3456);
+insert into accounts values (11,'nn1','chk',345);
+insert into accounts values (15,'nn2','chk',3478);
+
+create table movies (name varchar2(10) primary key ,category varchar2(10), release_date date, price number(4,1));

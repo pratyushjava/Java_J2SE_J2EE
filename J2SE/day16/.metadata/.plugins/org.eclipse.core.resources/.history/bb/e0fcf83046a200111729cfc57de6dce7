@@ -1,0 +1,68 @@
+package Bounce;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BounceFrame extends JFrame implements ActionListener {
+	
+	JButton b1,b2;
+	JPanel p1;
+	Random r1;
+	Color c1;
+	int x,y,minx,miny,maxx,maxy;
+	public BounceFrame() {
+		super("my bouncing frame");
+		setLocationRelativeTo(null);
+		setSize(300,300);
+		getContentPane().setBackground(Color.CYAN);
+		b1=new JButton("Start");
+		b2=new JButton("top");
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		p1=new JPanel(new GridLayout(1,2,20,20));
+		p1.add(b1);
+		p1.add(b2);
+		add(p1,BorderLayout.SOUTH);
+		Mypanel p2=new Mypanel();
+		add(p2);
+		
+		
+		
+	
+	}
+	
+	public class Ball{
+		public Color changeColor(){
+			r1=new Random();
+			c1=new Color(r1.nextInt(), r1.nextInt(), r1.nextInt());
+			return c1;
+			}
+		public Ellipse2D.Double shape(){
+			Ellipse2D.Double e1=new Ellipse2D.Double();
+		}
+		
+	}
+	
+	public class Mypanel extends JPanel{
+		public Mypanel(){
+			setBackground(Color.blue);
+		}
+		public void	paintComponent(Graphics g){
+			super.paintComponent(g);
+				
+			}
+			
+		}
+	
+	
+
+}

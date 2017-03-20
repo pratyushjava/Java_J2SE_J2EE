@@ -1,0 +1,14 @@
+package list_to_hashmap;
+
+import java.util.HashMap;
+
+public class TestHashMap {
+
+	
+	public static void main(String[] args) {
+		HashMap<Integer, Customer> hm=new HashMap<>();
+		
+
+	}
+
+}

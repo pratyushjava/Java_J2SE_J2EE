@@ -1,0 +1,83 @@
+package account;
+
+import java.util.*;
+import java.io.*;
+
+public class TestBank {
+
+	/**
+	 * @param args
+	 */
+
+	public static void main(String[] args) {
+		
+		HashMap<Integer, Bank_Acc> hm= new HashMap<>();
+		
+		DataOutputStream dos=null;
+		Scanner sc= new Scanner(System.in);
+		boolean flag=false;
+		int ch;
+		while(!flag)
+		{
+			System.out.println("press 1. create customer account");
+			System.out.println("press 2. for display account");
+			System.out.println("press 3. sort acc to ID ");
+			System.out.println("press 4. sort acc to balance");
+			System.out.println("press 5. sort acc to creation date");
+			System.out.println("press 6.to store customer in a bin file");
+			System.out.println("press 7. for exit");
+			System.out.println("Enter the choice");
+			ch=sc.nextInt();
+			
+			switch(ch)
+			{
+			case 1:
+					System.out.println("Enter the id,name,type,balance");
+					Bank_Acc bank =new Bank_Acc(sc.nextInt(),sc.next(),sc.next(),sc.nextDouble());
+					hm.put(bank.getId(),bank);
+					break;
+			case 2:
+					System.out.println("Display the customer details");
+					System.out.println(hm);
+					break;
+			case 3:
+					System.out.println("sort acc to id");
+					TreeMap<Integer,Bank_Acc> tm=new TreeMap<>(hm);
+					System.out.println(tm);
+					break;
+			case 4:
+					System.out.println("sort acc to balance");
+					Collection<Bank_Acc> col=hm.values();
+					ArrayList<Bank_Acc> al= new ArrayList<>(col);
+					System.out.println(al);
+					break;
+			case 5:
+					System.out.println("sort acc to creation date");
+					break;
+			case 6:
+					{
+						try
+						{
+							System.out.println("enter the filename");
+							dos=new DataOutputStream(new BufferedOutputStream(new FileOutputStream(sc.next())));
+						}catch(Exception e)
+						{
+							e.printStackTrace();
+						}
+						finally
+						{
+							
+						}
+					}
+					
+			case 7:
+					flag=true;
+					break;
+				
+			}
+			
+		}
+
+	}
+
+}

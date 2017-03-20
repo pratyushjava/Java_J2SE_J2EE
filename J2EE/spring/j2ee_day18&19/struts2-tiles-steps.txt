@@ -1,0 +1,42 @@
+Background
+
+For any Web application with a increasing  number of application screens it is essential to have a design which promotes page reuse and screen composition flexibility.  Apache Tiles  is a composite view pattern framework for Java web applications.  Struts 2 directly provides plug-in for the same.
+
+
+Apache Tiles Features – Quick Introduction To Tiles
+
+If  a Web application requires a number of application pages which requires same header data. The traditional way of avoiding duplication of header content is to use JSP includes in all the pages. This promotes reuse of the same header page in all the screens. In order to change header content, you just need to edit one file. However there is one major disadvantage to this. If you want to change the layout of your application, you will have to change all the pages you have created for your application!
+
+This is where Apache Tiles comes for our rescue. Tiles can extract the layout information and then individual pages can decide what layout they want to use. This way layout change will be limited to changes in a single layout file. Tiles can compose a screen from individual pages and a layout file. 
+
+Apache Tiles can be used in complex page composition use cases by using some of its key features,
+
+    * Page definitions can be nested or can inherit from other page definitions
+    * It is possible to create tiles page definitions at compile time or at runtime
+    * View prepares enables preparation of data before rendering page definitions
+
+Imple Steps(in day10_struts project)
+0. Add tiles realed JARs to your <web-inf>/lib
+
+1.Copy struts 2 tiles event listener entry in web.xml
+<listener>
+   <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+</listener>
+2. Objective ---- desgin 3 pages which have same header & footer BUT different body content.
+
+2. Create tiles.xml under <web-inf> --default location
+It contains 1 abstract tiles def --having 3 attr-value pairs header,footer,body.
+Contains  3 defs which extend from main layout def. ---they overridebody content
+3). Under <templates> --- mainlayout.jsp --- which contains actual page layout ---specifying in html title text,in table format --- header,footer,body
+4. Add action defs in struts.xml
+
+Note that the result type "tiles" is defined as a the TilesResult class. So whenever Struts encounters a result of the type "tiles" it will invoke TilesResult. TilesResult will use the content of the result tag to find the corresponding page definition in tiles.xml! So in this example, Home action has a "success result" of type" tiles" and hence TilesResult  will look for struts2tiles.home definition in tiles.xml.
+
+5. View pages are under tiles_pages under WebContent.
+
+
+Ref project
+day10_struts 
+URLs to try
+http://localhost:9090/day10_struts/test/home.action
+or page1.action or page2.action

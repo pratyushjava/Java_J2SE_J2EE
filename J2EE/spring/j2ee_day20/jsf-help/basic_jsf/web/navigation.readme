@@ -1,0 +1,133 @@
+0. Enter following in the web.xml, to specify multiple config xml files.(for faces-config.xml alone) its not required.
+<context-param> 
+<param-name>javax.faces.CONFIG_FILES</param-name> 
+      <param-value>/WEB-INF/faces-config.xml,/WEB-INF/faces-beans.xml</param-value> 
+</context-param> 
+
+
+1.<navigation-rule> 
+    <from-view-id>/pages/inputname.jsp</from-view-id> 
+    <navigation-case> 
+      <from-outcome>sayHello</from-outcome> 
+      <to-view-id>/pages/greeting.jsp</to-view-id> 
+    </navigation-case> 
+    <navigation-case> 
+      <from-outcome>sayGoodbye</from-outcome> 
+      <to-view-id>/pages/goodbye.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule>  
+Meaning : This code specifies that view /pages/inputname.jsp has two outputs, sayHello and sayGoodbye, associated with particular pages
+2.<navigation-rule> 
+   <from-view-id>/pages/inputname.jsp</from-view-id> 
+    <navigation-case> 
+      <from-outcome>sayHello</from-outcome> 
+      <to-view-id>/pages/greeting.jsp</to-view-id> 
+    </navigation-case> 
+    <navigation-case> 
+      <to-view-id>/pages/goodbye.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule>  
+  
+Meaning : This means that all outcomes except sayHello, will be forwarded to /pages/goodbye.jsp 
+3.
+<navigation-rule> 
+    <from-view-id>/pages/*</from-view-id> 
+    <navigation-case> 
+      <from-outcome>info</from-outcome> 
+      <to-view-id>/menu/generalHelp.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+  <navigation-rule> 
+    <from-view-id>/pages/login.jsp</from-view-id> 
+    <navigation-case> 
+      <from-outcome>info</from-outcome> 
+      <to-view-id>/menu/loginHelp.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+Meaning : In this example, the second navigation rule, not the first rule, will work for outcomes from /pages/login.jsp even though it is also matched by the pattern /pages/* in the first rule. The most specific match of from-view-id always takes precedence for a particular from-outcome. 
+
+4.
+If we want the globalHelp outcome from any page to always cause a transition to the page /menu/generalHelp.jsp . For this, we can use either of these two declarations: 
+
+<navigation-rule> 
+    <from-view-id>*</from-view-id> 
+    <navigation-case> 
+      <from-outcome>globalhelp</from-outcome> 
+      <to-view-id>/menu/generalHelp.jsp</to-view-id> 
+    </navigation-case> 
+</navigation-rule> 
+
+
+<navigation-rule> 
+    <navigation-case> 
+      <from-outcome>globalhelp</from-outcome> 
+      <to-view-id>/menu/generalHelp.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+The first snippet uses an asterisk for the from-view-id element, while the second snippet doesn’t use a from-view-id element at all. Both approaches work the same. Note though, that an empty from-view-id element, as displayed in the snippet below, will not work at all 
+
+<navigation-rule> 
+   <from-view-id></from-view-id> 
+    <navigation-case> 
+      <from-outcome>globalhelp</from-outcome> 
+      <to-view-id>/menu/generalHelp.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+5.
+What happens when a couple of navigation rules that have the same from-view-id and the same from-outcome point to different pages. Look at the next example: 
+
+<navigation-rule> 
+    <from-view-id>*</from-view-id> 
+    <navigation-case> 
+      <from-outcome>globalhelp</from-outcome> 
+      <to-view-id>/menu/generalHelp.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+<navigation-rule> 
+    <from-view-id>*</from-view-id> 
+    <navigation-case> 
+      <from-outcome>globalhelp</from-outcome> 
+      <to-view-id>/pages/goaway.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule> 
+
+The last rule is always used in such a situation. If JSF configuration data is splitted into several files, and in the case where the competing rules are in different configuration files, the rule in the last loading configuration file as listed in the web.xml file prevails. 
+
+6. Navigation rules in action
+
+A JSP page might contain the following line: 
+
+<h:commandButton id="submit" action="sayHello" value="Submit" /> 
+
+The action attribute will be used as an outcome. Or, here is another variation:
+
+<h:commandButton id="submit" action="#{GetNameBean.helloAction}" value="Submit" /> 
+
+This means that the helloAction method of GetNameBean will be invoked and the result will be used as an outcome. helloAction should be a public method that returns String. In faces-config.xml it can be done via from-action element. Look at the following code: 
+
+  <navigation-rule> 
+   <from-view-id>/pages/inputname.jsp</from-view-id> 
+    <navigation-case> 
+      <from-outcome>sayHello</from-outcome> 
+      <to-view-id>/pages/anotherhello.jsp</to-view-id> 
+    </navigation-case> 
+    <navigation-case> 
+      <from-action>#{GetNameBean.helloAction}</from-action> 
+      <from-outcome>sayHello</from-outcome> 
+      <to-view-id>/pages/hello.jsp</to-view-id> 
+    </navigation-case> 
+  </navigation-rule>  
+
+In this code, both navigation cases have the same from-view-id and from-outcome, however the second navigation case includes a from-action element. If the sayHello outcome is determined by GetNameBean.helloAction, the second navigation case will take effect, but only because otherwise both cases had equal precedence. 
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts2.3.dtd">
+
+<struts>
+
+	<!-- separate package for ADMIN related actions -->
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<!-- pass-thro action for changing to this pkg -->
+		
+		<action name="InsertShow" class="Actions.FillList">
+		<result>Insert.jsp</result>
+		</action>
+		
+		<action name="HotelInsertShow" class="Actions.FillList">
+		<result>HotelInsert.jsp</result>
+		</action>
+		
+		
+		<action name="showadmin" >
+		<result >adminlogin.jsp</result>
+		</action>
+		
+		
+		
+		<action name="ValidateAdmin" class="AdminActions.ValidateAdmin">
+		<result>adminhome.jsp</result>
+		<result name="error">adminloginerror.jsp</result>
+		<result name="input">adminlogin.jsp</result>
+		</action>
+		
+		
+		<action name="adminInsert" class="Actions.AdminInsert" >
+		<result>Insert.jsp</result>
+		</action>
+		
+		<action name="HotelInsert" class="AdminActions.HotelInsert" >
+		<result>HotelInsert.jsp</result>
+		</action>
+		
+		
+		<action name="adminUpdate" class="Actions.AdminUpdate" >
+		<result>Update.jsp</result>
+		</action>
+		
+		<action name="HoteladminUpdate" class="AdminActions.HotelAdminUpdate" >
+		<result>HotelUpdate.jsp</result>
+		</action>
+		
+		
+		<action name="adminDelete" class="Actions.AdminDelete">
+		<result>Delete.jsp</result>
+		</action>
+		
+		<action name="hoteladminDelete" class="AdminActions.HotelAdminDelete">
+		<result>HotelDelete.jsp</result>
+		</action>
+		
+		
+		<!-- <action name="UpdateShow" class="Actions.AdminUpdateShow">
+		<result>Update.jsp</result>
+		</action>
+		 -->
+		 
+		 <action name="UpdateShow" class="Actions.AdminListFill">
+		<result>Update.jsp</result>
+		</action>
+		
+		 <action name="HotelUpdateShow" class="AdminActions.HotelAdminListFill">
+		<result>HotelUpdate.jsp</result>
+		</action>
+		
+		
+		<action name="UpdateShow" class="Actions.AdminListFill">
+		<result>Update.jsp</result>
+		</action>
+		
+		
+		<action name="DeleteShow" class="Actions.AdminUpdateShow">
+		<result>Delete.jsp</result>
+		</action>
+		
+		<action name="HotelDeleteShow" class="AdminActions.HotelDetails">
+		<result>HotelDelete.jsp</result>
+		</action>
+		
+				
+	</package>
+</struts>

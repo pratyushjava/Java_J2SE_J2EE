@@ -1,0 +1,18 @@
+package shpcart;
+
+public class TestCustomer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+
+		Book[] b1=null;
+		
+		Customer[] c1={new Customer(101,"nani"),new Customer(102,"prat"), new Customer(35,"raj")};
+		
+		
+		
+	}
+
+}

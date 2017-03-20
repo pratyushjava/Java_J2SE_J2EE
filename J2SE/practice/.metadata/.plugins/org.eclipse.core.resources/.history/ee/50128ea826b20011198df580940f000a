@@ -1,0 +1,26 @@
+package lists;
+
+public class Customer implements Comparable<T>{
+	
+	
+	private int id;
+	private String email;
+	private String amt;
+	public Customer(int id, String email, String amt) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.amt = amt;
+	}
+	public Customer(int id) {
+		super();
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", email=" + email + ", amt=" + amt + "]";
+	}
+	
+	
+
+}

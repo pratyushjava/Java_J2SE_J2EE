@@ -1,0 +1,63 @@
+package lists;
+
+public class Customer implements Comparable<Customer>{
+	
+	
+	@Override
+	public int compareTo(Customer arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	private int id;
+	private String email;
+	private String amt;
+	public Customer(int id, String email, String amt) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.amt = amt;
+	}
+	public Customer(int id) {
+		super();
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", email=" + email + ", amt=" + amt + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((amt == null) ? 0 : amt.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (amt == null) {
+			if (other.amt != null)
+				return false;
+		} else if (!amt.equals(other.amt))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+	
+
+}

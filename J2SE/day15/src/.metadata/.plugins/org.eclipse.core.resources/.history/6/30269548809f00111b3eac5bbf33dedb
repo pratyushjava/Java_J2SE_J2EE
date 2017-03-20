@@ -1,0 +1,134 @@
+package Bounce;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
+import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Bounceball extends JFrame 
+{
+	private Thread t=null;
+	private int x=10,dx=10;
+	private int y=10,dy=10;
+public static void main(String []args){
+	Bounceball b=new Bounceball("Bounce Ball Application");
+	
+}
+Bounceball(String title)
+{
+   super(title);
+  
+	JPanel p1=new MyPanel();
+
+   
+	setSize(300, 300);
+	getContentPane().setBackground(Color.CYAN);
+	add(new JLabel("Bouncing ball"),BorderLayout.NORTH);
+	
+	
+	add(p1);
+	
+	setVisible(true);
+	
+}
+
+class MyPanel extends JPanel implements Runnable
+{
+	public MyPanel() {
+	
+		setBackground(Color.cyan);
+		 t=new Thread(this);
+		 t.start();
+	}
+	int rectx;
+	int recty;
+	Rectangle r1;
+
+	@Override
+	public void paintComponent(Graphics g) {
+		
+		super.paintComponent(g);
+		setTitle("ghjggjhj");
+		 r1=getBounds();
+		
+		Graphics2D g2=(Graphics2D) g;
+		g2.setColor(Color.black);
+		rectx=(int)r1.getCenterX();
+		recty=(int)r1.getCenterY();
+		
+		Ellipse2D.Double el=new Ellipse2D.Double(x,y, 10, 10);
+		g2.fill(el);
+		
+		
+	}
+	public void run()
+	{
+		boolean flag=true;
+		r1=getBounds();
+		int minx=(int)r1.getMinX();
+		int miny=(int)r1.getMinY();
+	int maxx=(int)r1.getMaxX();
+	int maxy=(int)r1.getMaxY();
+	
+		
+		try{
+			while(flag)
+			{
+			
+			if(y>=maxy)
+				{
+				dx=10;
+				dy=-10;
+				}
+			if(x>=maxx)
+			{
+				dx=-10;
+				dy=-10;
+			}
+					    
+	
+		 if(x<=minx)
+			{
+			dx=10;
+			dy=-10;
+			}
+		 if(y<=miny)
+		 {
+			 dy=10;
+			 dx=-10;
+		 }
+			 
+		
+	    
+	
+			
+		
+	    
+	}
+		
+		
+	    
+	}
+	
+			
+			
+		
+				
+		
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
+}

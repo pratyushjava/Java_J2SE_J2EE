@@ -1,0 +1,48 @@
+package shpcart;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Jframesignup extends JFrame {
+
+	JPanel ps1,ps2;
+	JLabel l1,l2,l3;
+	JButton sb1,sb2;
+	JTextField t1,t2,t3;
+	public Jframesignup(String title)
+	{
+		super(title);
+		setSize(300,300);
+		setLocationRelativeTo(null);
+		 getContentPane().setBackground(Color.CYAN);
+		 l1=new JLabel("Name");
+		 l1=new JLabel("Email");
+		 l1=new JLabel("Pasword");
+		 ps1=new JPanel(new GridLayout(3, 2, 15, 15));
+		 t1=new JTextField(20);
+		 t2=new JTextField(20);
+		 t3=new JTextField(20);
+		 ps1.add(l1);
+		 ps1.add(t1);
+		 ps1.add(l2);
+		 ps1.add(t2);
+		 ps1.add(l3);
+		 ps1.add(t3);
+		 sb1=new JButton("Submit");
+		 sb2=new JButton("Reset");
+		 ps2=new JPanel(1,2,25,20);
+		
+		
+	}
+	public static void main(String[] args) {
+		
+			new Jframesignup("THIS IS A SIGN UP PAGE");
+	}
+
+}

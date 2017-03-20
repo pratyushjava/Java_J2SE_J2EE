@@ -1,0 +1,74 @@
+package testershop;
+import shop.*;
+
+import java.util.*;
+import custexception.*;
+
+public class TestEShop {
+	static int idn=0;
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args)throws Exception {
+		ArrayList<Customer> al=new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		Customer cust=null;
+		GregorianCalendar g=null;
+		int ch=0;
+		int fid=0;
+		boolean flag=false;
+		while(!flag)
+		{	
+		System.out.println("press 1 for create account\n press 2 for display customer details");
+		System.out.println("press 3 for sort as per email and display \n press 4 to remove customer & display");
+		System.out.println("press 5 for exit");
+		ch=sc.nextInt();		
+		switch(ch)
+		{
+		case 1:
+			System.out.println("enter the email ,date of berth as per (year,month,day)");
+				cust=new Customer(++idn,sc.next(),new GregorianCalendar(sc.nextInt(),sc.nextInt()-1,sc.nextInt()));
+					
+				if(checkEmail(cust.getEmail()))
+				{
+					System.out.println("enter contrycode,statecode,zipcode");
+					cust.createContactInfo(sc.nextInt(),sc.nextInt(),sc.nextInt());
+					al.add(cust);
+					System.out.println("using array list"+al);	
+				}
+				break;
+		case 2:
+			System.out.println("enter the id of the customer");
+			fid=sc.nextInt();
+			Iterator<Customer> ir=al.iterator();
+			while(ir.hasNext())
+			{
+				Customer c=ir.next();
+				if(c.equals(new Customer(fid)))
+				{
+					System.out.println("found customer"+c);
+				}
+			}
+			}
+				
+		}
+
+	}
+
+}
+	static boolean checkEmail(String e) throws EmailExce
+	{
+		if(e.contains("@"))
+		{
+			return true;
+		}
+		else
+		{
+			throw new EmailExce("Invalid email Exception");
+			
+		}
+		//return false;
+	}
+	
+}

@@ -1,0 +1,8 @@
+
+public interface Query {
+	
+	String insert="insert into account values(?,?,?)";
+	String delete="delete from account where accno=?";
+	String update="update account set name=?,balance=? where accno=?";
+
+}

@@ -1,0 +1,22 @@
+package countstring;
+
+import java.util.*;
+
+public class Countstr {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		System.out.println("enter the string");
+		Scanner sc=new Scanner(System.in);
+		String str=null;
+		while(!(str=sc.next()).equals("exit"))
+		{
+			
+		}
+		
+	
+
+}

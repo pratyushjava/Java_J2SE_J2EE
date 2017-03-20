@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <definition name="master" template="/templates/main.jsp">
+      <put-attribute name="header" value="/common/header.jsp"/>
+      <put-attribute name="abovefooter" value="/common/abovefooter.jsp"/>
+      <put-attribute name="body"   value="" />
+      <put-attribute name="footer"   value="/common/footer.jsp"/>
+      <put-attribute name="left" value=""/>
+  </definition>
+  
+  <definition name="newhome" extends="master">
+      <put-attribute name="body"   value="/common/leftshow.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  
+  <definition name="Latest" extends="master">
+      <put-attribute name="body"   value="/tilespages/LatestSchedule.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  <definition name="aboutus" extends="master">
+      <put-attribute name="body"   value="/tilespages/AboutUs.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  <definition name="TA" extends="master">
+      <put-attribute name="body"   value="/tilespages/TA.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  <definition name="PP" extends="master">
+      <put-attribute name="body"   value="/tilespages/PP.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  <definition name="FB" extends="master">
+      <put-attribute name="body"   value="/tilespages/FeedBack.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  <definition name="Destination" extends="master">
+      <put-attribute name="body"   value="/tilespages/Destination.jsp"/> 
+      <!-- <put-attribute name="left"   value="/common/leftshow.jsp"/> -->      
+  </definition>
+  
+  
+  <definition name="addwithus" extends="master">
+      <put-attribute name="body"   value="/tilespages/adwithus.jsp"/> 
+           
+  </definition>
+  
+  
+  <definition name="rootmap" extends="master">
+      <put-attribute name="body"   value="/tilespages/rootmap.jsp"/> 
+           
+  </definition>
+  
+  
+  <definition name="career" extends="master">
+      <put-attribute name="body"   value="/tilespages/Carrer1.jsp"/> 
+           
+  </definition>
+  
+  <definition name="tnc1" extends="master">
+      <put-attribute name="body"   value="/tilespages/tnc1.jsp"/> 
+           
+  </definition>
+  
+  
+  <definition name="tips" extends="master">
+      <put-attribute name="body"   value="/tilespages/tips.jsp"/> 
+           
+  </definition>
+  
+  
+  <definition name="noflight" extends="master">
+      <put-attribute name="body"   value="/tilespages/NoFlight.jsp"/> 
+      <put-attribute name="left"   value="/common/leftshow.jsp"/>      
+  </definition>
+  
+  <definition name="nohotel" extends="master">
+      <put-attribute name="body"   value="/tilespages/NoHotel.jsp"/> 
+      <put-attribute name="left"   value="/common/leftshow.jsp"/>      
+  </definition>
+  
+  
+  <definition name="ShowFlight" extends="master">
+ 
+      <put-attribute name="body"   value="/tilespages/FlightDetails.jsp"/>  
+       <put-attribute name="left"   value="/common/leftshow.jsp"/> 
+           
+  </definition>
+  
+  <definition name="PassangerDetails" extends="master">
+      <put-attribute name="body"   value="/tilespages/PassangerDetails.jsp"/>      
+  </definition>
+  
+   <definition name="payment" extends="master">
+      <put-attribute name="body"   value="/tilespages/payment.jsp"/>      
+  </definition>
+ 
+ 
+  <definition name="BankingDetails" extends="master">
+      <put-attribute name="body"   value="/tilespages/BankingDetails.jsp"/>      
+  </definition>
+  
+  <definition name="Status" extends="master">
+      <put-attribute name="body"   value="/tilespages/status.jsp"/>      
+  </definition>
+  
+  
+  <definition name="HotelBankingDetails" extends="master">
+      <put-attribute name="body"   value="/tilespages/HotelBankingDetails.jsp"/>      
+  </definition>
+ 
+ 
+ <definition name="Userpayment" extends="master">
+      <put-attribute name="body"   value="/tilespages/Userpayment.jsp"/>      
+  </definition>
+ 
+  <definition name="Hotelpayment" extends="master">
+      <put-attribute name="body"   value="/tilespages/Hotelpayment.jsp"/>      
+  </definition>
+ 
+ 
+ <definition name="FlightBook" extends="master">
+      <put-attribute name="body"   value="/common/leftshow.jsp"/>      
+  </definition>
+  
+  
+  <definition name="NewFlightBook" extends="master">
+      <put-attribute name="body"   value="/tilespages/UserFlightSearch.jsp"/>      
+  </definition>
+ 
+  
+  <definition name="UserFlightSearch" extends="master">
+      <put-attribute name="body"   value="/tilespages/UserFlightSearch.jsp"/>      
+  </definition>
+  
+  <definition name="UserPassangerDetails" extends="master">
+      <put-attribute name="body"   value="/tilespages/UserPassangerDetails.jsp"/>      
+  </definition>
+ 
+ <definition name="UserFlightDetails" extends="master">
+      <put-attribute name="body"   value="/tilespages/UserFlightDetails.jsp"/>      
+  </definition>
+ 
+ 
+  
+  <definition name="ContactUs" extends="master">
+  <put-attribute name="body" value="/tilespages/contactus1.jsp"></put-attribute>
+  </definition>
+  
+  
+  <definition name="Hotel" extends="master">
+  <put-attribute name="body" value="/tilespages/Hotel.jsp"></put-attribute>
+  </definition>
+  
+  <definition name="HotelSearch" extends="master">
+  <put-attribute name="body" value="/tilespages/HotelSearch.jsp"></put-attribute>
+  </definition>
+  
+  <definition name="BankingSlip" extends="master">
+  <put-attribute name="body" value="/tilespages/BankingSlip.jsp"></put-attribute>
+  </definition>
+  
+  
+  <definition name="LeftHotel" extends="master">
+   <put-attribute name="body"   value="/tilespages/home.jsp"/> 
+  <put-attribute name="left" value="/tilespages/Hotel.jsp"></put-attribute>
+  </definition>
+ 
+ 
+  <definition name="PassangerLogin" extends="master">
+  <put-attribute name="body" value="/tilespages/PassangerLogin.jsp"></put-attribute>
+  </definition>
+ 
+ <definition name="PassangerHome" extends="master">
+  <put-attribute name="body" value="/tilespages/PassangerHome.jsp"></put-attribute>
+  </definition>
+  
+  <definition name="PrintTicket" extends="master">
+  <put-attribute name="body" value="/tilespages/PrintTicket.jsp"></put-attribute>
+  </definition>
+ 
+  <definition name="ShowTicket" extends="master">
+  <put-attribute name="body" value="/tilespages/ShowTicket.jsp"></put-attribute>
+  </definition>
+  
+ 
+ 
+ <definition name="HotelDetails" extends="master">
+  <put-attribute name="body" value="/tilespages/HotelDetails.jsp"></put-attribute>
+   <put-attribute name="left"   value="/tilespages/Hotel.jsp"/>
+  </definition>
+ 
+ <definition name="HotelUserDetails" extends="master">
+  <put-attribute name="body" value="/tilespages/HotelUserDetails.jsp"></put-attribute>
+   
+  </definition>
+ 
+  
+ <!--  <definition name="new_page1" extends="master1">
+      <put-attribute name="body"   value="/tilespages/page1.jsp"/>      
+  </definition>
+  
+  <definition name="new_page2" extends="master1">
+      <put-attribute name="body"   value="/tilespages/page2.jsp"/>      
+  </definition>
+  --> 
+ 
+</tiles-definitions>

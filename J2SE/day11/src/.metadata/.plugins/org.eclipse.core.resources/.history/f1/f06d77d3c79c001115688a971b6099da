@@ -1,0 +1,33 @@
+package account;
+
+import java.util.*;
+import java.io.*;
+public class Bank_Acc 
+{
+	private int id;
+	private String name;
+	private String type;
+	private double balance;
+	//private GregorianCalendar doc;
+	
+	public Bank_Acc(int id, String name, String type, double balance//,
+			//GregorianCalendar doc
+			) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.balance = balance;
+		//this.doc = doc;
+	}
+
+	@Override
+	public String toString() {
+		return "Bank_Acc [id=" + id + ", name=" + name + ", type=" + type
+				+ ", balance=" + balance// + ", doc=" + doc + 
+				"]";
+	}
+	
+	
+
+}

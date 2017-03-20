@@ -1,0 +1,71 @@
+package My_socket_thread;
+import java.net.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+import java.net.ServerSocket;
+
+public class MyclientScocet extends JFrame implements ActionListener{
+
+	public static final int SERVER_PORT=3000;
+	public JTextField jt;
+	public JTextArea jta;
+	public JPanel p;
+	public JScrollPane jsp;
+	public boolean exit=false;
+	public PrintWriter pw;
+	public DataInputStream in;
+	public static void main(String[] args) {
+		
+			new MyclientScocet(); 
+	}
+	public MyclientScocet() {
+	
+		try(Socket s=new Socket(InetAddress.getLocalHost(),SERVER_PORT))
+		{
+			pw =new PrintWriter(s.getOutputStream());
+			in=new DataInputStream(s.getInputStream());
+			System.out.println("data strms attached");
+			initGui(pw,in);
+		}
+		catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+
+
+public void initGui(PrintWriter pw,DataInputStream din)
+{
+	  JPanel p1=new JPanel();
+	  p=new JPanel(new GridLayout(3, 2,10,10));
+	  p.add(new JLabel("Send Text"));
+	  jt=new JTextField();
+	  p.add(jt);
+	  jta=new JTextArea(5,10);
+	  p.add(new JLabel("Receive Text"));
+	  p.add(jsp=new JScrollPane(jta=new JTextArea()));
+	  p.add(p1);
+	  add(p);
+     setSize(400, 400);
+     setVisible(true);
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	
+    
+     
+    	 pw.println(jt.getText());
+    	 System.out.println("waiting for client response");
+    	 jta.setText(in.readLine());
+    	 
+    	 
+     
+}     
+    
+
+}

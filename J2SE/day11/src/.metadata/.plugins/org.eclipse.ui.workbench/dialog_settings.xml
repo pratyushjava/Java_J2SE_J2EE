@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\java@45\day9\src\Shoppingcart\src\shpcart"/>
+			<item value="\\Acts-adc\userdata$\dac45\Desktop\java\day14_share_data\day14\src\swing_applets"/>
+			<item value="\\Acts-adc\userdata$\dac45\Desktop\java\day13_share_data\day13\src\swing_frms"/>
+			<item value="\\Acts-adc\userdata$\dac45\Desktop\java\day13_share_data\day13\src\adapters"/>
+			<item value="\\Acts-adc\userdata$\dac45\Desktop\java\day13_share_data\day13\src\swing_frms1"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+</section>

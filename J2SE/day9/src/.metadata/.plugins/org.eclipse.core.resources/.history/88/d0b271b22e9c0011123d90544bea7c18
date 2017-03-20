@@ -1,0 +1,47 @@
+package shpcart;
+
+import java.util.*;
+public class TestCustomer {
+
+	public static Customer[] c1=null;
+	public static void main(String[] args) {
+
+		Book[] b1={new Book("java","madhura","cdac",500,3),new Book(".net","delhi mam","fast",850,3), new Book("web","sole","hyderabad",3000,3)};
+		
+		Customer[]	c1={new Customer(101,"nani"),new Customer(102,"prat"), new Customer(35,"raj")};
+		
+		Scanner sc=new Scanner(System.in);
+		
+		boolean flag=false;
+		while(!flag)
+		{
+			
+		
+		System.out.println("enter the choice");
+		System.out.println("press 1 for login \n press 2 for display customer details");
+		System.out.println("press 3 for sort as per book name and display \n press 4 to remove book & display cart");
+		System.out.println("press 5 to add to cart \n press 6 to exit");
+		int ch=sc.nextInt();
+		
+		switch(ch){
+		case 1:
+					System.out.println("enter your id and name ");
+					int idc=sc.nextInt();
+					String nam=sc.next();
+					checkCustomer(idc,nam);
+					
+					
+			
+		}
+		
+		}
+		
+		
+	}
+	public static void checkCustomer(int idc, String nam) 
+	{
+		
+	}
+	
+
+}

@@ -1,0 +1,32 @@
+package firstjdbc;
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class ActionForm extends JFrame {
+	
+	JLabel l1,l2,l3;
+	JTextField jt1,jt2,jt3;
+	JButton b1,b2,b3,b4,b5,b6;
+	
+	public static void main(String[] args) {
+		new ActionForm();
+	}
+	ActionForm(){
+		setSize(400,400);
+		setLocationRelativeTo(null);
+		getContentPane().setBackground(Color.CYAN);
+		b1=new JButton("create");
+		b2=new JButton("insert");
+		b3=new JButton("delete");
+		b4=new JButton("update");
+		b5=new JButton("retriv");
+		b6=new JButton("retrivall");
+		l1=new JLabel("accno");
+	}
+
+}

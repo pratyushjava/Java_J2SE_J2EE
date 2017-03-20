@@ -1,0 +1,11 @@
+JSF HTML Tags : from the TLD <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
+1. Using input text box.
+<h:inputText value="This is a text box."></h:inputText>.
+2. Using Hidden form Field.
+<h:form>
+           <h:inputHidden id="ih" value="hv"></h:inputHidden>
+        </h:form>
+3. For password field
+<h:inputSecret value="abc" />
+
+

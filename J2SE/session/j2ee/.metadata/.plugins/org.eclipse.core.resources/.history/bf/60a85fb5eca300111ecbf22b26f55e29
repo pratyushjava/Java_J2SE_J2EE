@@ -1,0 +1,9 @@
+package firstjdbc;
+
+public interface Service {
+
+	public void insrt(Account a);
+	public void delete(int accno);
+	public void update();
+	
+}

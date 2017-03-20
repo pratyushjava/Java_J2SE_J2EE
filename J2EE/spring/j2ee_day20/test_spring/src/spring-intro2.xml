@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Printer beans -->
+	<bean id="cPrinter" class="why_spring.beans.UpdateInfoConsolePrinter"
+		scope="singleton" />
+	<bean id="fPrinter" class="why_spring.beans.UpdateInfoFilePrinter" />
+	<bean id="dbPrinter" class="why_spring.beans.UpdateInfoDBPrinter" />
+
+	<!-- Student beans -->
+
+	<bean id="stud5" class="why_spring.beans.SpringStudent2">
+		<!-- constr-arg based DI -->
+		<constructor-arg value="abc" />
+		<constructor-arg value="101" />
+
+		<constructor-arg value="def" />
+		<!-- setter DI -->
+		<property name="printer" ref="dbPrinter"></property>
+	</bean>
+	<!-- constr ambiguity problem -->
+	<bean id="cust1" class="why_spring.beans.Customer">
+		<constructor-arg value="Kiran" />
+		<constructor-arg value="150" />
+		<constructor-arg value="25" />
+	</bean>
+
+	<!-- constr ambiguity problem resolved by type -->
+	<bean id="cust2" class="why_spring.beans.Customer">
+		<constructor-arg value="Kiran1" />
+		<constructor-arg type="java.lang.String" value="150" />
+		<constructor-arg value="25" />
+	</bean>
+	
+	<!-- constr ambiguity problem resolved by index -->
+	<bean id="cust3" class="why_spring.beans.Customer">
+		<constructor-arg value="Kiran2" />
+		<constructor-arg index="1" value="155" />
+		<constructor-arg value="25" />
+		
+	</bean>
+	
+
+</beans>

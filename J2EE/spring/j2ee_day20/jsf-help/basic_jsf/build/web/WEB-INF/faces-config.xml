@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="1.2" 
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+    <navigation-rule>
+        <from-view-id>/basic/*</from-view-id>
+        <navigation-case>
+            <from-outcome>validated</from-outcome>
+            <to-view-id>/basic/valid.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>welcome2</from-outcome>
+            <to-view-id>/basic/welcome2.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>welcome</from-outcome>
+            <to-view-id>/basic/welcome.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/basic/*</from-view-id>
+        <navigation-case>
+            <from-action>#{UserBean.sayHello}</from-action>
+            <from-outcome>welcome2</from-outcome>
+            <to-view-id>/basic/welcome2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/basic/question.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>welcome2</from-outcome>
+            <to-view-id>/basic/welcome.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!-- Search page related entries.-->
+    <navigation-rule>
+        <from-view-id>/search/search.jsp</from-view-id>
+        <!--
+          the 'from-outcome' values are defined in SearchPage
+      -->
+        <navigation-case>
+            <from-outcome>search_complete</from-outcome>
+            <to-view-id>/search/search-result.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>search_error</from-outcome>
+            <to-view-id>/search/search.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/calc/calculator.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/calc/results.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/login/login.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/login/greeting.jsp</to-view-id>
+        </navigation-case>
+ <!--       <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/login/login.jsp</to-view-id>
+        </navigation-case>-->
+    </navigation-rule>
+    <!-- nav rule for guessing numbers -->
+    <navigation-rule>
+        <from-view-id>/guess_num/greeting.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/guess_num/response.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/guess_num/response.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/guess_num/greeting.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <managed-bean>
+        <description>
+            The "backing  bean that backs up Guess number
+        </description>
+        <managed-bean-name>guess</managed-bean-name>
+        <managed-bean-class>guess.MyGuesserBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>					
+        <property-name>minimum</property-name>
+        <value>1</value>
+        </managed-property>
+        <managed-property>			
+        <property-name>maximum</property-name>
+        <value>10</value>
+        </managed-property>
+
+    </managed-bean>
+
+
+
+    <managed-bean>
+        <description>
+            The "backing  bean that backs up the DB conn.
+        </description>
+        <managed-bean-name>tableBean</managed-bean-name>
+        <!-- For fixed JDBC conn <managed-bean-class>db.TableBean</managed-bean-class>-->
+        <managed-bean-class>db.TableBeanJNDI</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <description>Login Bean Holder</description>
+        <managed-bean-name>LoginBean</managed-bean-name>
+        <managed-bean-class>jsflogin.LoginBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <description>
+            The "backing file" bean that backs up the calculator webapp
+        </description>
+        <managed-bean-name>CalcBean</managed-bean-name>
+        <managed-bean-class>jsfBean.CalculatorConroller</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+
+
+    <!-- Search Page Beans -->
+
+    <!-- search page related entries end -->
+    <managed-bean>
+        <managed-bean-name>newtasks</managed-bean-name>
+        <managed-bean-class>java.util.ArrayList</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <list-entries>
+            <value>Do Debugging</value>
+            <value>Finish Autobinding Spec</value>
+            <value>Present at Oracle Developer Day</value>
+        </list-entries>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>User</managed-bean-name>
+        <managed-bean-class>jsfBean.UserBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+        <property-name>firstName</property-name>
+        <value>aa</value>
+        </managed-property>
+        <managed-property>
+            <property-name>lastName</property-name>
+            <value>bb</value>
+        </managed-property>
+        <managed-property>
+            <property-name>phone</property-name>    <value>12345678</value>
+        </managed-property>
+        <managed-property>
+            <property-name>tasks</property-name>
+            <list-entries>
+                <value>Finish JSF IoC POJO Article</value>
+                <value>Finish .Net J2EE Article</value>
+                <value>Revise RSS How To</value>
+                <value>#{newtasks[0]}</value>
+                <value>#{newtasks[1]}</value>
+                <value>#{newtasks[2]}</value>
+            </list-entries>
+        </managed-property>
+        <managed-property>  <property-name>recentBlogEntries</property-name>
+            <map-entries>
+                <map-entry>
+                    <key>ODD</key>
+                    <value>http://www.abc.com/page/basic/?anchor=just_added_adf_faces_content</value>
+                </map-entry>
+                <map-entry>
+                    <key>ASPvsJSF</key>
+                    <value>http://www.abc.com/page/diffs/?anchor=is_jsf_ready_to_take</value>
+                </map-entry>
+                <map-entry>
+                    <key>MyFaces</key>
+                    <value>http://www.abc.com/page/apache/?anchor=how_to_use_my_faces1</value>
+                </map-entry>
+            </map-entries>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>valueBean</managed-bean-name>
+        <managed-bean-class>jsfBean.ValueBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>myAction</managed-bean-name>
+        <managed-bean-class>jsfBean.ActionBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+
+    <managed-bean>
+        <managed-bean-name>UserBean</managed-bean-name>
+        <managed-bean-class>jsfBean.UserNameBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>data</managed-bean-name>
+        <managed-bean-class>
+            jsfBean.DataBean
+        </managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <navigation-rule>
+        <from-view-id>/payment/payment.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>process</from-outcome>
+            <to-view-id>/payment/result.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/payment/result.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/payment/payment.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <managed-bean>
+        <managed-bean-name>payment</managed-bean-name>
+        <managed-bean-class>jsfBean.PaymentBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <!-- custom converter -->
+    <navigation-rule>
+        <from-view-id>/payment_convert/payment2.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>process</from-outcome>
+            <to-view-id>/payment_convert/result2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/payment_convert/result2.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/payment_convert/payment2.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <converter>
+        <converter-id>convert.CreditCard</converter-id>
+        <converter-class>convert.CreditCardConverter</converter-class>
+    </converter>
+
+    <managed-bean>
+        <managed-bean-name>payment_convert</managed-bean-name>
+        <managed-bean-class>convert.PaymentBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <!-- custom validators -->
+    <navigation-rule>
+        <from-view-id>/payment_validate/payment.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>process</from-outcome>
+            <to-view-id>/payment_validate/result.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/payment_validate/result.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>back</from-outcome>
+            <to-view-id>/payment_validate/payment.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <managed-bean>
+        <managed-bean-name>payment_validate</managed-bean-name>
+        <managed-bean-class>validate.PaymentBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <!-- bean for update tables -->
+    <managed-bean>
+        <managed-bean-name>tableData</managed-bean-name>
+        <managed-bean-class>update_table.TableData</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+
+<!-- For internationalizing web apps -->
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>de</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>jsfBean.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+
+</faces-config>
+

@@ -1,0 +1,42 @@
+package account;
+
+import java.util.*;
+import java.io.*;
+
+public class TestBank {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		HashMap<Integer, Bank_Acc> hm= new HashMap<>();
+		
+		
+		Scanner sc= new Scanner(System.in);
+		boolean flag=false;
+		int ch;
+		while(!flag)
+		{
+			System.out.println("press 1. create customer account");
+			System.out.println("press 2. for display account");
+			System.out.println("press 3. sort acc to ID ");
+			System.out.println("press 4. sort acc to balance");
+			System.out.println("press 5. sort acc to creation date");
+			System.out.println("press 6.to store customer in a bin file");
+			System.out.println("Enter the choice");
+			ch=sc.nextInt();
+			
+			switch(ch)
+			{
+			case 1:
+					System.out.println("Enter the id,name,type,balance");
+					Bank_Acc bank =new Bank_Acc(sc.nextInt(),sc.next(),sc.next(),sc.nextDouble());
+					hm.put(bank.getId(),bank);
+			}
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package shop;
+import java.util.*;
+public class Customer {
+	private int id;
+	private String email;
+	private Date dob;
+	private String items;
+	public class ContactInfo
+	{
+		int countrycode;
+		int statecode;
+		int zipcode;
+		int phoneno;
+	}
+	
+
+}

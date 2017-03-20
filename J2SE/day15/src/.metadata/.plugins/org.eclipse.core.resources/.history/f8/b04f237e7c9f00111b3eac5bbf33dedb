@@ -1,0 +1,16 @@
+package Thread_frame;
+
+import javax.swing.JFrame;
+
+public class Bouncingball extends JFrame {
+
+	
+	public static void main(String[] args) {
+	new Bouncingball("bouncing ball");
+	}
+	Bouncingball(String s)
+	{
+		super(s);
+	}
+
+}

@@ -1,0 +1,37 @@
+package Pbank;
+import java.text.SimpleDateFormat;
+import java.util.*;
+public class Account implements Comparable<Account> {
+	private int id;
+	private String name;
+	private String type;
+	private int balance;
+	private Date doc;
+	private SimpleDateFormat sdf;
+	
+	public Account(int id, String name, String type, int balance,String s)throws Exception {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.balance = balance;
+		this.doc = doc;
+		sdf=new SimpleDateFormat("dd-MMM-yyyy");
+		doc=sdf.parse(s);
+		
+	}
+	
+	public String toString()
+	{
+		return " accounts[id="+id+" name="+name+" type="+type+"balance="+balance+"DateOfCreation="+sdf.format(doc)+"]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+}

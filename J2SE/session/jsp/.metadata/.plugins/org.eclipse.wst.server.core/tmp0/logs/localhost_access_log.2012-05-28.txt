@@ -1,0 +1,6 @@
+127.0.0.1 - - [28/May/2012:23:36:28 +0530] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [28/May/2012:23:36:29 +0530] "GET /day6/basic/login.html HTTP/1.1" 200 459
+0:0:0:0:0:0:0:1 - - [28/May/2012:23:36:47 +0530] "GET /day6/basic/login.jsp?email=101&pass=pass HTTP/1.1" 200 276
+127.0.0.1 - - [28/May/2012:23:39:41 +0530] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [28/May/2012:23:39:53 +0530] "GET /day6/basic/login.jsp?email=101&pass=pass HTTP/1.1" 200 276
+0:0:0:0:0:0:0:1 - - [28/May/2012:23:40:57 +0530] "GET /day6/basic/login.jsp?email=a@b&pass=123 HTTP/1.1" 200 386

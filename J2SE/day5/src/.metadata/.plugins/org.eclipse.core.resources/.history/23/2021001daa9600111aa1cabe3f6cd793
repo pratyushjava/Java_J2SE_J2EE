@@ -1,0 +1,20 @@
+package Payroll;
+
+public class PartWorker extends Employee {
+	int partsmade;
+	double rateperpart;
+	double netsal;
+	public PartWorker(int id, String name, String addr, int deptid,
+			int partsmade, double rateperpart) {
+		super(id, name, addr, deptid);
+		this.partsmade = partsmade;
+		this.rateperpart = rateperpart;
+	}
+	
+	public double netsalary()
+	{
+		netsal=basicsal+(partsmade+rateperpart);
+		return netsal;
+	}
+
+}

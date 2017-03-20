@@ -1,0 +1,6 @@
+
+public interface Query {
+	
+	String insert="insert into account values(?,?,?)";
+
+}

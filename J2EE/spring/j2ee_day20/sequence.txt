@@ -1,0 +1,109 @@
+spring projects in ---G:\struts2\test_spring
+
+1. Introduction to Spring ---slides 1---7
+2. Demo 1 --- Life w/o spring 
+Objective --- To print student details upon modifications --- destinations -- console , log file or DB table.
+2.1 Student class, hard-coding dependency.(tightly-coupled dependencies) -- Student,TestStudent
+By private UpdateInfoConsolePrinter printer = new UpdateInfoConsolePrinter();
+2.2 Slight improvement --- i/f ref referring to imple. class(Student1,TestStudent1)
+2.3 More improvement --- Create a Helper Factory Class -- UpdateInfoFactory -- factory pattern (Student2,TestStudent2)---i.e static method rets concrete Printer inst. Modify Student class to inst & use factory inst.--- so that actual Printer specific details are all encapsulated in the helper class.
+
+2.4 Enter Spring --- SpringStudent -- No need of Helper class. Student class itself will be injected with appropriate Printer inst at the run time --- auto by spring container.--by looking into xml config file(spring-config.xml) .(TestSpringStudent) -- for demo just change the type of printer in xml(i.e id of bean) & see o/p changed.
+
+2.5 In TestSpringStudent1 --- spring-config1.xml,SpringStudent Bean ---create multiple student beans with diff. printers injected into it. Def scope=singleton . Confirm it by injecting same printer bean into multiple student beans.
+Change scope=prototype & confirm multiple inst of printer bean getting created.
+
+2.6 In TestSpringStudent2 ---spring-config2.xml, SpringStudent2 Bean -- DI via constr-arg (even using & identifying overloaded constrs correct)
+
+2.7 In TestCustomer -- spring-config2.xml,Customer Bean, --- "cust1" --- shows constr ambiguity problem
+"cust2" --- resolves it by specifying constr arg data type.
+"cust3" --- resolves it by specifying constr arg index(index starts from 0 ....)
+
+
+
+2.8 Complete example --- Talent Search Competition
+I/F & Beans in --- performService
+Tester in --- performService.tester
+
+3. Spring with Minimal XML
+Enter Spring 3 annotations
+For enabling support for annotations --- In minimal XML file ---along with beans namespace, add context namespece & add
+<context:annotation-config/>
+3.1. @Autowired --- annotation for auto. wiring dependencies in to Beans
+This anno can be applied at -- field level OR setter method level OR constr level
+def  required=true
+i.e dependency bean must be  existing , otherwise throws exception -- NoSuchBeanDefExc
+eg --- anno_intro.beans.Person -- dependency
+Customer -- dependent bean.
+anno_intro.tester --- AnnotationTester
+spring_anno.xml --- defines Customer Bean
+If required true -- & Person Bean not found --- throws exc.
+If reqd=false & Person Bean not found --- no exc , Person=null
+Multiple bean ids of type person exist -- exc.(BeanCreationExc) -- as no unique bean exists.
+3.2 @Qualifier("id of Dependency Bean to be injected")
+
+Make changes in above & test it.
+
+3.3 Auto-scanning of Components
+Available annotaions --- stereotype annotations
+@Component -- any type of component
+@Repository --- DAO layer bean in persistence layer
+@Service --- service layer bean in business layer
+@Controller -- web MVC controller 
+
+eg --- anno_intro.beans.dao---CustomerDAO
+& anno_intro.beans.service---CustomerService
+Tester class --- AnnotationTester2
+xml -- spring_autoscan.xml 
+
+4.  Spring Expression Language (new in Spring 3)
+Mainly for evaluating expressions.
+4.1 Simple usage -- in static (fixed/hard-coded) manner -- using XML
+
+eg --Beans --- spel.model.Item,Customer
+xml -- <resources>/spel_config.xml
+tester --- spel.tester.Tester
+
+4.2 
+Objective -- Adding annotations along with minimal xml configuration
+include/exclude filters
+init-method,destroy-method --- bean attributes
+Alternative to above --- @PostConstruct, @PreDestroy
+Using SPEL along with @Value annotation---to assign value in dynamic manner by invoking methods.
+Model/Beans --- spel.model.newname.DataBean -- confirm understanding of @Scope
+Possible vals -singleton(def => singleton inst in a specific application context),prototype,request,session,global-session
+Change scope from singleton to prototype & observe.
+Beans ---spel.model.newname.Item,Customer
+xml -- resources/spel_anno_config.xml
+Tester  --- spel.tester.TesterAnno
+
+4.3 Simlar setup , additional SPEL tricks
+Beans pkg --- spel.model.anno2
+xml -- resources/spel_anno_config1.xml
+Tester  --- spel.tester.TesterAnno2
+
+4.4 Collection handling via SPEL
+beans pkg ---spel.model.collections.Test & Customer
+xml -- resources/spel_collection.xml
+tester ---spel.tester.TesterCollections
+
+Item --- 2 props -- name & quantity
+
+Day 2 
+1. AOP ---
+
+2. Spring-JDBC
+
+3. Web MVC
+
+
+
+
+
+
+
+
+
+
+
+

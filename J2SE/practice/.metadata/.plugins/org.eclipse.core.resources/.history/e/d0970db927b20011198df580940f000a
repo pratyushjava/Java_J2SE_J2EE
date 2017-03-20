@@ -1,0 +1,55 @@
+package lists;
+
+public class Customer implements Comparable<Customer>{
+	
+	
+	
+	private int id;
+	private String email;
+	private String amt;
+	public Customer(int id, String email, String amt) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.amt = amt;
+	}
+	public Customer(int id) {
+		super();
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", email=" + email + ", amt=" + amt + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (amt == null) {
+			if (other.amt != null)
+				return false;
+		} else if (!amt.equals(other.amt))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	@Override
+	public int compareTo(Customer c) {
+		
+		return id-c.id;
+	}
+	
+
+}

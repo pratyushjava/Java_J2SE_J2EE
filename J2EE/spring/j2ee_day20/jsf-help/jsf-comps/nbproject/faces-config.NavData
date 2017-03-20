@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="result-set.jsp" x="150" y="300" zoom="true"/>
+        <Node id="menu.jsp" x="900" y="150" zoom="true"/>
+        <Node id="index.jsp" x="650" y="150" zoom="true"/>
+        <Node id="chart.jsp" x="150" y="450" zoom="true"/>
+        <Node id="ajaxValidator.jsp" x="650" y="450" zoom="true"/>
+        <Node id="imagemap.jsp" x="400" y="300" zoom="true"/>
+        <Node id="ShowSource.jsp" x="400" y="450" zoom="true"/>
+        <Node id="complete.jsp" x="400" y="600" zoom="true"/>
+        <Node id="repeater.jsp" x="650" y="300" zoom="true"/>
+        <Node id="tabbedpanes.jsp" x="150" y="600" zoom="true"/>
+        <Node id="progressbar.jsp" x="900" y="300" zoom="true"/>
+        <Node id="tabbedpanes3.jsp" x="400" y="150" zoom="true"/>
+        <Node id="demo-test.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="wait.jsp" x="150" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

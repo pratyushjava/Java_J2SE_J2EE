@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+closed,editor,org.eclipse.jst.jsp.ui,1.1.601.v201108151912,"org.eclipse.jst.jsp.core.jspsource.source",1340225072174
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225074077
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110505-0800,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1340225074093
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.edit.delete",1340225074093
+error,log,,,"Could not read metadata for '\\\\Acts-adc\\userdata$\\dac45\\Desktop\\java@45\\.metadata\\.plugins\\org.eclipse.core.resources\\.root\\.indexes\\properties.index'.",1340225074109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225074109
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225074904
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225078960
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225096760
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.import",1340225096791
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.import",1340225096791
+started,bundle,org.eclipse.wst.xsl.ui,1.1.200.v201103082057,"org.eclipse.wst.xsl.ui",1340225106510
+opened,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1340225106557
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1340225106650
+executed,command,org.eclipse.ui,3.7.0.I20110602-0100,"org.eclipse.ui.file.save",1340225117601
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.I20110421-1800,"org.eclipse.ui.navigator.ProjectExplorer",1340225132765
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225147912
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225150268
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225150283
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225153185
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225153216
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225182185
+activated,editor,org.eclipse.wst.xml.ui,1.1.201.v201108151912,"org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart",1340225182326
+deactivated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225183808
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1340225198690

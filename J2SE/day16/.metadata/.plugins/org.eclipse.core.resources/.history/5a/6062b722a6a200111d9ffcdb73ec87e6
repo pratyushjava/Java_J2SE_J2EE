@@ -1,0 +1,180 @@
+package Bounce;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.Rectangle;
+import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
+import java.util.ArrayList;
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BounceFrame extends JFrame implements ActionListener,Runnable {
+	public static void main(String[] args) {
+	BounceFrame bounce=new BounceFrame();	
+	}
+	
+	JButton b1,b2;
+	JPanel p1;
+	Random r1;
+	Color c1;
+	int dx=10;
+	int dy=10;
+	Thread t;
+	Rectangle rect;
+	boolean exit=false;
+	double x=10.0d;
+	double y=10.0d;
+	
+	double minx,miny,maxx,maxy;
+	ArrayList<Ball> ab=new ArrayList<>();
+	ArrayList<Thread> at=new ArrayList<>();
+	public BounceFrame() {
+		super("my bouncing frame");
+		setLocationRelativeTo(null);
+		setSize(300,300);
+		getContentPane().setBackground(Color.CYAN);
+		b1=new JButton("Start");
+		b2=new JButton("stop");
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		p1=new JPanel(new GridLayout(1,2,20,20));
+		p1.add(b1);
+		p1.add(b2);
+		add(p1,BorderLayout.SOUTH);
+		Mypanel p2=new Mypanel();
+		add(p2);
+		setVisible(true);
+		rect=p2.getBounds();
+		minx=rect.getMinX();
+		miny=rect.getMinY();
+		maxx=rect.getMaxX();
+		maxy=rect.getMaxY();
+		
+		System.out.println("hello"+minx+" "+miny+" "+maxx+" "+maxy);
+	
+	}
+	@Override
+	public void actionPerformed(java.awt.event.ActionEvent e) {
+		
+		String s=e.getActionCommand().toLowerCase();
+		switch (s) {
+		case "start":
+			ab.add(new Ball());
+			t=new Thread(this);
+			at.add(t);
+			t.start();
+			
+			
+			break;
+			
+		case "stop":
+						exit=true;
+						break;
+
+		default:
+			break;
+		}
+		
+	};
+	
+	public class Ball{
+		ball(){
+		x=10.0d;
+		}
+		public Color changeColor(){
+			r1=new Random();
+			c1=new Color(r1.nextInt(255), r1.nextInt(255), r1.nextInt(255));
+			return c1;
+			}
+		public Ellipse2D.Double shape(){
+			
+			Ellipse2D.Double e1=new Ellipse2D.Double(x+r1.nextDouble(),y+r1.nextDouble(),10,10);
+			return e1;
+		}
+		
+	}
+	@Override
+	public void run() {
+		//repaint();
+				
+		try{
+			while(!exit)
+			{
+				  System.out.println("x="+x);
+				   System.out.println("y="+y);
+			
+			if(y>maxy-10)
+				{
+				dx=10;
+				dy=-10;
+				}
+			 if(x>maxx-10)
+			{
+				dx=-10;
+				dy=-10;
+			}
+					    
+	
+			 if(x<0)
+			{
+			dx=10;
+			dy=10;
+			}
+			 if(y<0)
+		 {
+			 dy=10;
+			 dx=-10;
+		 }
+			 System.out.println("run");
+		x=x+dx;
+		y=y+dy;
+	    repaint();
+	    t.sleep(50);
+	    System.out.println("x="+x);
+	   System.out.println("y="+y);
+	    
+			
+		
+	    
+	}
+		
+		
+	    
+	}
+						
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+		
+	
+	public class Mypanel extends JPanel{
+		public Mypanel(){
+			setBackground(Color.blue);
+		}
+		public void	paintComponent(Graphics g){
+			super.paintComponent(g);
+			
+			Graphics2D g2=(Graphics2D) g;
+				for(Ball b:ab)
+				{
+					g2.setColor(b.changeColor());
+					g2.fill(b.shape());
+					
+				}
+				
+			}
+			
+		}
+	
+	
+
+}

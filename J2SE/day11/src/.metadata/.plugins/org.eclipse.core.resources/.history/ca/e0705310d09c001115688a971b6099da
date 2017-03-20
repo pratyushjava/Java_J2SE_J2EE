@@ -1,0 +1,12 @@
+package account;
+
+import java.util.*;
+public class TestComparator implements Comparator<Bank_Acc> {
+
+	@Override
+	public int compare(Bank_Acc o1, Bank_Acc o2) {
+		
+		
+		return 0;
+	}
+}

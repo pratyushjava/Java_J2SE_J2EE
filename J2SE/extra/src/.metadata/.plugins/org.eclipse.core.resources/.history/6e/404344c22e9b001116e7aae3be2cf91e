@@ -1,0 +1,14 @@
+package occurances;
+
+import java.util.*;
+
+public class WordCount {
+
+	public static void main(String[] args) {
+		HashSet<WordCount> hs= new HashSet<>();
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a line of statement");
+		WordCount[] wc= new WordCount[sc.nextLine()];
+	}
+}

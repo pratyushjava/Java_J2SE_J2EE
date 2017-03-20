@@ -1,0 +1,15 @@
+package three_balls;
+
+import javax.swing.JFrame;
+
+public class ThreeBalls extends JFrame {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

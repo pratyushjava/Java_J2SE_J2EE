@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE struts SYSTEM "struts2.dtd">
+
+<struts>
+	<package name="basic" namespace="/basic" extends="struts-default">
+		<action name="hello">
+			<result>/basic/welcome.jsp</result>
+		</action>
+		<action name="login" class="simple_actions.LoginAction">
+			<result>/basic/login_succ.jsp</result>
+			<result name="error">/basic/login_err.jsp</result>
+		</action>
+		<action name="register" class="simple_actions.RegisterAction">
+			<result>/basic/reg_succ.jsp</result>
+			<result name="input">/basic/register.jsp</result>
+		</action>
+	</package>
+</struts> 

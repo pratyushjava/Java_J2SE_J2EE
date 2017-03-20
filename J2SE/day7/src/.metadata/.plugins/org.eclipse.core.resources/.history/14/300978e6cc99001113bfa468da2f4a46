@@ -1,0 +1,65 @@
+package testershop;
+import shop.*;
+import java.util.*;
+import custexception.*;
+
+public class TestEShop {
+	static int idn=0;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ArrayList<Customer> al=new ArrayList<>();
+		Scanner sc=new Scanner(System.in);
+		Customer cust=null;
+		GregorianCalendar g=null;
+		int ch=0;
+		boolean flag=false;
+		while(!flag)
+		{	
+		System.out.println("press 1 for create account\n press 2 for display customer details");
+		System.out.println("press 3 for sort as per email and display \n press 4 to remove customer & display");
+		System.out.println("press 5 for exit");
+		ch=sc.nextInt();		
+		switch(ch)
+		{
+		case 1:
+			System.out.println("enter the id ,email ,date of berth as per (year,month,day)");
+				cust=new Customer(++idn,sc.next(),new GregorianCalendar(sc.nextInt(),sc.nextInt()-1,sc.nextInt()));
+				try
+				{
+				if(checkEmail(cust.getEmail()))
+				{
+					cust.createContactInfo(sc.nextInt(),sc.nextInt(),sc.nextInt());
+					al.add(cust);
+					System.out.println("using array list"+al);
+					
+						
+					
+				}
+				}
+				catch (Exception e) {
+					System.out.println();
+				}
+				
+		}
+
+	}
+
+}
+	static boolean checkEmail(String e) throws EmailExce
+	{
+		if(e.contains("@"))
+		{
+			return true;
+		}
+		else
+		{
+			throw new EmailExce("Invalid email Exception");
+			
+		}
+		//return false;
+	}
+	
+}

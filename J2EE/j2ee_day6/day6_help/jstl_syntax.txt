@@ -1,0 +1,97 @@
+JSTL Core Tags
+1. To print the data.
+<c:out value="any scoped attribute| param.paramName|bean-name.property| key from msg resource bundle">default val to be displayed </c:out>
+<c:out value="<h3>abc</h3>" escapeXml="false"/>
+escapeXML : default is true => Tags are not interpreted.
+
+2. To set a variable-var(ie. attr in a specified scope via value attr or body) or Map-target
+
+2.1 For setting a var : which acts like the attribute in a scope
+<c:set var="myData" value="some data"/> : def scope = page.(can be req|sess|appln) 
+Adds the attr myData to the named scope.
+Can set the value thro' the body.
+<c:set var="data">1234</c:set>
+
+2.2 Can set a var from bean 
+<jsp:useBean id="date" class="java.util.GregorianCalendar" />
+  Current Date : <c:out value="${date.time}"/>
+  Note : var type is of the Bean class i.e GregorianCalendar & calls internally getTime for date.time
+
+2.3 Can create entire map via JavaBean & add vals.
+<jsp:useBean id="months" class="java.util.HashMap">
+    <c:set target="${months}" property="1" value="Jan"/>
+    <c:set target="${months}" property="2" value="Feb"/>
+    <c:set target="${months}" property="3" value="Mar"/>
+    <c:set target="${months}" property="4" value="Apr"/>
+</jsp:useBean>
+
+
+2.3 Can set/add a value in a map
+<c:set target="${test.map}" property="40" value="Hi Maps!" /><br/>
+
+3. Iteration Tags : forEach 
+
+3.1 c:forEach : supports begin,end,step like for loop
+
+Note : test -> JavaBean id, map : JB property type=HashMap
+<c:forEach var="a" items="${test.map}" varStatus="loop" step="1">
+  <c:out value="loop_count : ${loop.count} map[${a.key}]=" ></c:out><c:out value="${a.value}" ></c:out> <br/>
+  </c:forEach>
+
+3.2 Can nest c:forEach
+Note : twoDArr is 2D int array property of test JB
+<c:forEach var="outer" items="${test.twoDArr}">
+	<c:forEach var="inner" items="${outer}">
+	 <c:out value="${inner}"/>
+	</c:forEach><br/>
+</c:forEach>
+
+4. Conditional : c:if
+Note : test is id of JavaBean
+
+<c:if test="${test1.name == 'abc'}">
+    in if condition
+</c:if>
+eg --- <c:if test=${param.update == 'Withdraw'>
+<jsp:forward page="withdraw.jsp" />
+</c:if>
+//deposit logic
+
+Abve implies --- if test.name is 'abc', then test.name will be set to 'new value'
+
+
+5. if-else conditions.
+<c:choose>
+  <c:when test="expression">
+    body content
+  </c:when>
+  ...
+  <c:otherwise>
+    body content
+  </c:otherwise>
+</c:choose>
+
+
+6. Tag for generating URL : for prepending the name of the current context,URL rewriting if cookies are disabled & for appending rq. params. 
+If following are the requirements : 
+one.jsp ---> linked to two.jsp must work with or w/o cookies , must add 2 rq. params
+Must use scriptlet 
+<%
+out.println("<a href='"+response.encodeURL(url ....
+%>
+Instead use following syntax :
+<c:url value="expression" context="expression"
+    var="name" scope="scope">
+  <c:param name="expression" value="expression"/>
+  ...
+</c:url>
+<a href="${url}"> Next </a>
+example in test3.jsp.
+
+7. Tag for sendredirect : similar to above
+<c:redirect url="expression" context="expression">
+  <c:param name="expression" value="expression"/>
+  ...
+</c:redirect>
+
+
